@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.CourseDetailFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginBottom="80dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:src="@drawable/img_course_theoretical_main"
+            android:scaleType="centerCrop"
+            android:layout_height="300dp"
+            android:contentDescription="@string/nazariy_mashg_ulotlar" />
+
+        <TextView
+            android:id="@+id/tv_course_name"
+            android:layout_width="match_parent"
+            android:fontFamily="@font/ubuntu_regular"
+            android:textSize="24sp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="@string/nazariy_mashg_ulotlar"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_white_stroked"
+            android:drawablePadding="5dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/ubuntu_light"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="4dp"
+            android:text="@string/admin1"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:drawableStartCompat="@drawable/ic_creator" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/ubuntu_regular"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:text="@string/about_course"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_about_course"
+            android:layout_width="match_parent"
+            android:textSize="16sp"
+            android:gravity="start|end"
+            android:justificationMode="inter_word"
+            android:layout_marginVertical="5dp"
+            android:textColor="@color/black"
+            android:text="@string/about_theoretical"
+            android:layout_marginHorizontal="20dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:fontFamily="@font/ubuntu_regular"
+            android:textSize="20sp"
+            android:layout_marginHorizontal="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginVertical="5dp"
+            android:text="@string/course_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTheme"
+            android:layout_width="match_parent"
+            tools:listitem="@layout/item_theme"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="5"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

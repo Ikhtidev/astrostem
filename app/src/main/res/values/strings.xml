@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">astrostem</string>
+    <string name="home">Home</string>
+    <string name="profile">Profil</string>
+    <string name="saved">Saqlanganlar</string>
+    <string name="mashg_ulotlar">Mashg’ulotlar</string>
+    <string name="krosswords">Krossvordlar</string>
+    <string name="krosswords1">Osmon sferasining asosiy elementlari</string>
+    <string name="nazariy_mashg_ulotlar">Nazariy mashg’ulotlar</string>
+    <string name="amaliy_mashg_ulotlar">Amaliy mashg’ulotlar</string>
+    <string name="laboratoriya_mashg_ulotlar">Laboratoriya mashg’uloti</string>
+    <string name="kursga_yozilish">Kursni ko’rish</string>
+    <string name="admin1">Gulhayo Sayfullayeva va Bozorova Aziza</string>
+    <string name="count_23">23</string>
+    <string name="count_16">16</string>
+    <string name="count_13">13</string>
+    <string name="count_6">6</string>
+    <string name="solve">Yechish</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_course">Kurs haqida</string>
+    <string name="about_practical">Masalalarni yechish umumiy astronomiya kursini o‘zlashtirishga yordam beradi, chunki u fanning nazariy asosini qo‘llanilishini ko‘rsatadi. Har bir bo‘limdagi masalalar qiyinlik darajasi oshib borishi tartibida soddadan murakkabga qarab joylashgan. Masalalardan oldin qisqa nazariy ma’lumotlar va xarakterli masalalarning taxlili keltirilgan.\n\nMasalalar pedagogika universitetlarida o‘rganiladigan umumiy astronomiya kursining barcha asosiy bo‘limlari bo‘yicha tuzilgan. Ko‘pgina masalalarda bir nechta obyektlar bilan yoki Yer sirtining har xil joyida kuzatiladigan bir xil hodisalar bilan bog‘liq yechimlarni topish talab qilinadi. Bunday talab masalalar yechimiga qarab umumlashtiruvchi xulosalarni chiqarish mumkin bo‘lishi uchun qo‘yilgan, chunki har xil variantlar har xil talabalar tomonidan bajarilgan bo‘lishi mumkin. O‘qituvchi masalaning bitta variantining yechimini ko‘rsatib, qolganlarini talabalarga mustaqil yechishga taklif etishi mumkin.\n\nAstronomiyaning barcha bo‘limlari orasidagi o‘zaro bog‘langanlik masalalarni aniq bir bo‘lim bo‘yicha taqsimlashga imkon bermaydi, shu sababli ba’zi bir masalalar joyini almashtirishga to‘g‘ri kelgan.\n\nSferik astronomiyaning planetalar konfiguratsiyasi va sun’iy osmon jismlarini uchirishga doir masalalarni yechishda, masalani yechishni yengillashtiruvchi chizmalarni chizish, olgan natijalarni jadvallarga kiritish foydali bo‘lib, ularni taxlil qilish qonuniyatlarni topishga, zarur xulosalarni chiqarishga va natijalarning haqiqiyligini ko‘rsatishga yordam beradi.\n\nKosmik apparatlar (KA) va yerning sun’iy yo‘ldoshlariga doir masalalar yechishning o‘ziga xos xususiyatlari bor, bunda talaba fikrlash va tasavvur etish qobilyatiga ega bo‘lishi kerak.\n\nIlmiy tadqiqotlardan farqli o‘laroq ushbu masalalarni yechishda juda yuqori aniqlik shart emas. Shu sababli masalalarni har xil aniqlikda yechish mumkin, demak, javoblar ham bir — biridan biroz farq qilishi mumkin. O‘qituvchi masalalarda berilgan raqamlarni ma’lum bir chegarada yaxlitlashi, talabalarni xam shunday qilishga о‘rgatishga haqlidir. O‘quv jarayonida uchta raqam aniqligida xisoblashlarni olib borish yetarli hisoblanadi.</string>
+    <string name="about_theoretical">Ushbu «AstroSTEM» ta’lim tizimi pedagogika oliy o’quv yurtlarining 60110700 – “Fizika va astronomiya, qo’shimcha matematika” ta’lim yo’nalishi talabalari uchun mo’ljallangan. \n\nTizim  fan dasturida keltirilgan barcha mavzularni qamrab olgan va ketma-ketlikda batafsil yoritilgan. Mavzularning yoritilishida fanlararo bog’liqlik inobatga olingan bo’lib, nazariy jihatdan mavzularni bayon etilishida ijodiy yondashilgan. Har bir mavzudan so’ng tayanch iboralar, nazorat savollari, shuningdek, glossariy, talabalar mustaqil o’qishlari uchun astronomik ma’lumotlar, testlar, jadvallar keltirilgan bo’lib, ular nafaqat fanni muvaffaqiyatli o’zlashtirishda, balki talabalarning ilmiy dunyoqarashini kengaytirishda ham xizmat qiladi. \n\nTizimdan nafaqat pedagogika oliy o’quv yurtlarining “Fizika va astronomiya, qo’shimcha matematika” ta’lim yo’nalishi talabalari, balki “Matematika-informatika”, “Tabiiy fanlar” ta’lim yo’nalishlari talabalari uchun ham foydalidir.</string>
+    <string name="about_laboratory">Ushbu ”Umumiy astronomiyadan laboratoriya ishlari” ”Fizika-astronomiya” ta’lim yo’nalishlari talabalari uchun mo’ljallangan bo’lib, fanning o’quv dasturi asosida tuzilgan (“Fizika-astronomiya” ta’lim yo’nalishi uchun tasdiqlangan o’quv dastur asos qilib olingan). Tizimning asosiy maqsadi talabalar nazariy bilimlarini amaliyot bilan bog’lash, amaliy ko’nikma va malakalarini yanada mustahkamlash hamda ularni astronomiya faniga bo’lgan qiziqishlarini oshirishga yo’naltirilgan. 15 ta laboratoriya ishlari, 40 dan ortiq laboratoriya topshiriqlari va bir nechta mustaqil mavzular, ko’plab ilovalar keltirilgan.\n\nAkademik litsey, kasb-hunar kollejlari o’qituvchi va o’quvchilari uchun ham foydalidir.</string>
+    <string name="course_content">Kurs tarkibi</string>
+
+    <string name="theme_n_1">1-§. Kirish. Astronomiyaga kirish. G’arb va sharq astronomiyasi tarixi</string>
+    <string name="theme_n_2">2-§. Yulduzlar osmoni va uning aylanishi</string>
+    <string name="theme_n_3">3-§. Turli geografik kenglamalarda osmon sferasining ko’rinma aylanishi</string>
+    <string name="theme_n_4">4-§. Sferik va paralaktik uchburchaklar</string>
+    <string name="theme_n_5">5-§. Yoritgichlarning kulminatsiyasi va kulminatsiya balandliklari</string>
+    <string name="theme_n_6">6-§. Vaqtni o‘lchash asoslari</string>
+    <string name="theme_n_7">7-§. Mahalliy va dunyo vaqtlari</string>
+    <string name="theme_n_8">8-§. Taqvimlar. Taqvimlar turlari</string>
+    <string name="theme_n_9">9-§. Sayyoralarning konfigurasiyalari</string>
+    <string name="theme_n_10">10-§. Yoritgichlarning sutkalik va gorizontal parallaksini hisoblash</string>
+    <string name="theme_n_11">11-§. Butun olam tortishish qonuni, ikki jism masalasi</string>
+    <string name="theme_n_12">12-§. Oy harakati va fazalari</string>
+    <string name="theme_n_13">13-§. Astrofizik metodlar</string>
+    <string name="theme_n_14">14-§. Astrofizik instrumentlar</string>
+    <string name="theme_n_15">15-§. Yer — oy tizimi, yer tipidagi sayyoralar    </string>
+    <string name="theme_n_16">16-§. Gigant sayyoralar</string>
+    <string name="theme_n_17">17-§. Quyosh sistemasidagi kichik jismlar</string>
+    <string name="theme_n_18">18-§. Yillik parallaks</string>
+    <string name="theme_n_19">19-§. Vizual va tutiluvchi qо‘shaloq yulduzlar. Fizik о‘zgaruvchan yulduzlar</string>
+    <string name="theme_n_20">20-§. Yulduzlarning ichki energiya manbalari. Yulduzlarning galaktik konsentratsiyasi</string>
+    <string name="theme_n_21">21-§. Tashqi galaktiklar: ularning sinflari (spiral, elliptik, linzasimon va noto’g’ri)</string>
+    <string name="theme_n_22">22-§. Osmon jismlarining paydo bо‘lishi</string>
+    <string name="theme_n_23">23-§. O’zbekistonda astronomiya fani</string>
+
+    <string name="theme_a_1">1-mavzu. Osmon sferasi. Uning asosiy nuqta, chiziq va aylanalariga doir masalalar yechish</string>
+    <string name="theme_a_2">2-mavzu. Osmon jismlarining koordinatalari va ular orasidagi bog’lanishlarni topishga doir masalalar yechish</string>
+    <string name="theme_a_3">3-mavzu. Yoritgichlarning kulminatsiyasi hamda kulminatsiya balandliklarini topishga doir masalalar yechish</string>
+    <string name="theme_a_4">4-mavzu. Sferik uchburchak va uning asosiy formulalariga doir masalalar yechish</string>
+    <string name="theme_a_5">5-mavzu. Haqiqiy va o’rtacha quyosh vaqti hamda vaqt tenglamasi, mahalliy, poyas, dunyo va dekret vaqtlariga doir masalalar yechish</string>
+    <string name="theme_a_6">6-mavzu. Taqvimlar</string>
+    <string name="theme_a_7">7-mavzu. Quyoshning chiqish va botish momentini hamda chiqish va botish nuqtalarining azimutlarini hisoblashga doir masalalar</string>
+    <string name="theme_a_8">8-mavzu. Yoritkichlarning refraksiyasiga doir masalalar yechish</string>
+    <string name="theme_a_9">9-mavzu. Kepler qonunlari va planetalarning konfiguratsiyalari hamda davrlarini hisoblashga doir masalalar yechish</string>
+    <string name="theme_a_10">10-mavzu. Quyosh sistemasi jismlarining masofalari va o’lchamlarini hisoblashga doir masalalar yechish</string>
+    <string name="theme_a_11">11-mavzu. Butun olam tortishish qonuni. Osmon jismlari massalari</string>
+    <string name="theme_a_12">12-mavzu. Oyning harakati va fazalari. Quyosh va oy tutilishlariga doir masalalar yechish</string>
+    <string name="theme_a_13">13-mavzu. Oy. Tutilishlar. Sayyoralar</string>
+    <string name="theme_a_14">14-mavzu. Yulduzlargacha bo’lgan masofalarni aniqlashga doir masalalar yechish</string>
+    <string name="theme_a_15">15-mavzu. Yulduzlarning massalari, o’lchamlari (radiuslari) va zichliklarini aniqlashga doir masalalar yechish</string>
+    <string name="theme_a_16">16-mavzu. Yulduzlarning xususiy harakatlari va fazoviy tezliklarini aniqlashga doir masalalar yechish</string>
+
+    <string name="theme_l_1">Osmon sferasining asosiy elementlari</string>
+    <string name="theme_l_2">Yulduzlarning kichik atlaslari</string>
+    <string name="theme_l_3">Astronomik kalendarlar va spravochniklar</string>
+    <string name="theme_l_4">Vaqtni o’lchash sistemalarini o‘rganish</string>
+    <string name="theme_l_5">Yulduzlar osmonining surilma xaritasi</string>
+    <string name="theme_l_6">Тurli geografik kengliklarda osmon yoritkichlarining gorizontdan balandliklarini aniqlash</string>
+    <string name="theme_l_7">Optik тeleskoplarning tuzilishini o’rganish</string>
+    <string name="theme_l_8">Butun olam tortishish qonuni va ikki jism masalasi</string>
+    <string name="theme_l_9">Quyosh radiusi(diametri)ni aniqlash</string>
+    <string name="theme_l_10">Quyoshning chiqish (botish) vaqt daqiqalarini va chiqish (botish) nuqtalarining azimutlarini hisoblash</string>
+    <string name="theme_l_11">Quyosh aktivligini o‘rganish</string>
+    <string name="theme_l_12">Oy harakati va fazalari. Oyning sirt detallarini aniqlash</string>
+    <string name="theme_l_13">Kepler qonunlari va sayyoralar konfiguratsiyasi</string>
+    <string name="test">test</string>
+    <string name="nazorat_savollari">Nazorat savollari</string>
+    <string name="select_true_answer">To\'g\'ri variantni tanlang</string>
+    <string name="check">Tekshirish</string>
+    <string name="answer_true">To\'g\'ri javob!</string>
+
+</resources>
