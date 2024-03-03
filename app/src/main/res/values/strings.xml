@@ -83,5 +83,7 @@
     <string name="select_true_answer">To\'g\'ri variantni tanlang</string>
     <string name="check">Tekshirish</string>
     <string name="answer_true">To\'g\'ri javob!</string>
+    <string name="answer_false">Noto\'g\'ri javob!</string>
+    <string name="next">Keyingi</string>
 
 </resources>

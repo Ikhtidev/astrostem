@@ -7,16 +7,28 @@ import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.LottieAnimationView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import org.jsoup.Jsoup
+import org.jsoup.nodes.Document
+import org.jsoup.select.Elements
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import uz.astrostem.astrostem.R
+import uz.astrostem.astrostem.database.ThemeDatabase
+import uz.astrostem.astrostem.database.entity.MyTest
+import uz.astrostem.astrostem.database.entity.Question
 import uz.astrostem.astrostem.database.entity.Theme
+import uz.astrostem.astrostem.database.entity.Variant
 import uz.astrostem.astrostem.utils.Constants.Companion.THEME_LIST
 import uz.astrostem.astrostem.utils.TYPE
+import java.io.IOException
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
+
+    private val themeDatabase: ThemeDatabase by lazy {
+        ThemeDatabase.getInstance(this)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
@@ -33,10 +45,16 @@ class SplashActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO).launch {
 
             withContext(Dispatchers.Default) {
+                addTestsToDb()
+            }
+            withContext(Dispatchers.Default) {
                 createThemeList()
             }
             withContext(Dispatchers.Default) {
                 addThemesToDb()
+            }
+            withContext(Dispatchers.Default) {
+                addQuestionsToDb()
             }
             withContext(Dispatchers.Default) {
                 startMainActivity()
@@ -45,8 +63,96 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
-    private fun addThemesToDb() {
+    private suspend fun addTestsToDb() {
+        val tests = ArrayList(themeDatabase.testDao().getAllTests())
+        if(tests.isEmpty()){
+            themeDatabase.testDao().addTest(MyTest(name = "Test savollari. Sharq astronomiyasi (2)", testsCount = 150))
+            themeDatabase.testDao().addTest(MyTest(name = "Test test 1", testsCount = 100))
+            themeDatabase.testDao().addTest(MyTest(name = "Test test 2", testsCount = 50))
+        } else {
+            delay(500)
+        }
+    }
 
+    private suspend fun addQuestionsToDb() {
+        val questions = ArrayList(themeDatabase.questionDao().getAllQuestions())
+        if (questions.isEmpty()) {
+            for (i in 1..1) {
+                writeOneQuestionToDb(i)
+            }
+        } else {
+            delay(2000)
+        }
+    }
+
+    private fun writeOneQuestionToDb(testId: Int) {
+
+        try {
+            val input = assets.open("$testId/$testId.html")
+            val document: Document = Jsoup.parse(input, "windows-1252", "http://astrostem.uz/")
+
+            // Change the value of the src attribute of the img tag
+            val imgElements = document.select("img")
+            for (img in imgElements) {
+                var imgPath = img.attr("src")
+                imgPath = "file:///android_asset/$testId/$imgPath"
+                img.attr("src", imgPath)
+            }
+
+            // All tables
+            val tables = document.select("table")
+
+            // Each table
+            for (table in tables) {
+                val rows: Elements = table.select("tr")
+
+                val questionAndVariants: Elements = rows.select("td")
+                var questionId: Long = -1
+                for (i in 0 until questionAndVariants.size) {
+
+                    if (i == 0) {
+                        themeDatabase.questionDao().addQuestion(
+                            Question(
+                                title = "<b>${questionAndVariants[i]}</b",
+                                testId = (testId - 1)
+                            )
+                        ).also { questionId = it }
+                    } else {
+                        themeDatabase.variantDao().addVariant(
+                            if (i == 1) {
+                                Variant(
+                                    title = questionAndVariants[i].toString(),
+                                    isTrue = true,
+                                    questionOwnerId = questionId
+                                )
+                            } else {
+                                Variant(
+                                title = questionAndVariants[i].toString(),
+                                isTrue = false,
+                                questionOwnerId = questionId
+                            )
+                            }
+                        )
+                    }
+                }
+
+            }
+
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+
+    }
+
+    private fun addThemesToDb() {
+        val themes = ArrayList(themeDatabase.themeDao().getAllThemes())
+        if (themes.isEmpty()) {
+            CoroutineScope(Dispatchers.IO).launch {
+                THEME_LIST.forEach { theme ->
+                    themeDatabase.themeDao().addTheme(theme)
+                }
+            }
+        }
     }
 
     private fun createThemeList() {
@@ -106,8 +212,7 @@ class SplashActivity : AppCompatActivity() {
         THEME_LIST.add(Theme(name = getString(R.string.theme_l_13), type = TYPE.L))
     }
 
-    private suspend fun startMainActivity() {
-        delay(timeMillis = 2000)
+    private fun startMainActivity() {
         startActivity(Intent(this@SplashActivity, MainActivity::class.java))
         finish()
     }

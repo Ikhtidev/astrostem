@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
+    tools:ignore="UsingOnClickInXml"
     tools:context=".ui.TestActivity">
 
     <LinearLayout
@@ -73,18 +74,17 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvQuestion"
-        android:layout_height="wrap_content">
+        app:layout_constraintTop_toBottomOf="@id/tvQuestion">
 
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingVertical="20dp"
             android:paddingHorizontal="30dp"
-            tools:ignore="UsingOnClickInXml">
+            android:paddingVertical="20dp">
 
             <RadioButton
                 android:id="@+id/radioBtn1"
@@ -144,10 +144,10 @@
 
     <FrameLayout
         android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_height="0dp">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/btnCheck"
@@ -157,7 +157,6 @@
             android:layout_margin="20dp"
             android:background="@drawable/bg_recording"
             android:clickable="true"
-            android:visibility="gone"
             android:focusable="true"
             android:fontFamily="@font/ubuntu_light"
             android:gravity="center"
@@ -165,14 +164,16 @@
             android:text="@string/check"
             android:textColor="@color/white"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="gone" />
 
         <LinearLayout
+            android:id="@+id/layoutTrueAns"
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:visibility="visible"
+            android:layout_height="wrap_content"
             android:background="@drawable/bg_btn_next_layout"
-            android:layout_height="wrap_content">
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -187,7 +188,6 @@
                 app:drawableStartCompat="@drawable/ic_creator" />
 
             <TextView
-                android:id="@+id/btn_next"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
@@ -195,15 +195,56 @@
                 android:background="@drawable/bg_btn_next"
                 android:clickable="true"
                 android:focusable="true"
-                android:fontFamily="@font/ubuntu_light"
+                android:onClick="onNextButtonClicked"
+                android:fontFamily="@font/ubuntu_bold"
                 android:gravity="center"
                 android:paddingVertical="10dp"
-                android:text="@string/check"
-                android:textColor="@color/white"
+                android:text="@string/next"
+                android:textColor="@color/green"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutFalseAns"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_btn_next_red_layout"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginStart="20dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/ubuntu_regular"
+                android:text="@string/answer_false"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                app:drawableStartCompat="@drawable/ic_creator" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="20dp"
+                android:background="@drawable/bg_btn_next"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="onNextButtonClicked"
+                android:fontFamily="@font/ubuntu_bold"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:text="@string/next"
+                android:textColor="@color/red"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

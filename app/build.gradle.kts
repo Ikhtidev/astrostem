@@ -62,4 +62,7 @@ dependencies {
     implementation("androidx.room:room-runtime:2.6.1")
     kapt("androidx.room:room-compiler:2.6.1")
 
+    // jsoup for html render
+    implementation("org.jsoup:jsoup:1.13.1")
+
 }

@@ -4,6 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="bg_white">#ACACAC</color>
     <color name="green">#00FF00</color>
+    <color name="red">#FF0000</color>
     <color name="my_dark_primary">#0456DA</color>
     <color name="my_primary_variant">#5B9AFF</color>
     <color name="my_primary_variant_light">#A2C6FF</color>

@@ -1,5 +1,6 @@
 package uz.astrostem.astrostem.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import uz.astrostem.astrostem.R
 import uz.astrostem.astrostem.databinding.FragmentHomeBinding
+import uz.astrostem.astrostem.ui.TestActivity
 import uz.astrostem.astrostem.utils.Constants.Companion.FRAGMENT_TYPE
 import uz.astrostem.astrostem.utils.TYPE
 
@@ -50,8 +52,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             btnCrossword.setOnClickListener {
                 Toast.makeText(activity, "Krossvord bosildi", Toast.LENGTH_SHORT).show()
             }
-
-
         }
     }
 
@@ -61,7 +61,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             examCountTests.text = "56"
             examBestResult.text = "70%"
             btnTest1.setOnClickListener {
-                Toast.makeText(activity, "test 1", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(activity, TestActivity::class.java))
             }
 
             tvTestName2.text = "Astranomiyadan 100 ta test 2-kurs"
