@@ -1,18 +1,24 @@
 package uz.astrostem.astrostem.ui
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.LottieAnimationView
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import org.jsoup.Jsoup
-import org.jsoup.nodes.Document
-import org.jsoup.select.Elements
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.apache.poi.hssf.usermodel.HSSFCell
+import org.apache.poi.hssf.usermodel.HSSFRow
+import org.apache.poi.hssf.usermodel.HSSFSheet
+import org.apache.poi.hssf.usermodel.HSSFWorkbook
+import org.apache.poi.poifs.filesystem.POIFSFileSystem
+import org.apache.poi.ss.usermodel.Cell
+import org.apache.poi.ss.usermodel.Row
 import uz.astrostem.astrostem.R
 import uz.astrostem.astrostem.database.ThemeDatabase
 import uz.astrostem.astrostem.database.entity.MyTest
@@ -21,7 +27,7 @@ import uz.astrostem.astrostem.database.entity.Theme
 import uz.astrostem.astrostem.database.entity.Variant
 import uz.astrostem.astrostem.utils.Constants.Companion.THEME_LIST
 import uz.astrostem.astrostem.utils.TYPE
-import java.io.IOException
+import java.io.InputStream
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -40,7 +46,7 @@ class SplashActivity : AppCompatActivity() {
     private fun initViews() {
 
         val lottieAnimationView: LottieAnimationView = findViewById(R.id.imageLoading)
-        lottieAnimationView.setAnimation(R.raw.loading1)
+        lottieAnimationView.setAnimation(R.raw.loading)
 
         CoroutineScope(Dispatchers.IO).launch {
 
@@ -77,71 +83,60 @@ class SplashActivity : AppCompatActivity() {
     private suspend fun addQuestionsToDb() {
         val questions = ArrayList(themeDatabase.questionDao().getAllQuestions())
         if (questions.isEmpty()) {
-            for (i in 1..1) {
-                writeOneQuestionToDb(i)
+            val context:Context = applicationContext
+            val assetManager = context.assets
+            val myInput: InputStream = assetManager.open("questions.xls")
+            val myFileSystem = POIFSFileSystem(myInput)
+            val myWorkBook = HSSFWorkbook(myFileSystem)
+            for (i in 0..0) {
+                writeOneTestToDb(myWorkBook, i)
             }
         } else {
             delay(2000)
         }
     }
 
-    private fun writeOneQuestionToDb(testId: Int) {
-
+    private fun writeOneTestToDb(myWorkBook: HSSFWorkbook, testId: Int) {
         try {
-            val input = assets.open("$testId/$testId.html")
-            val document: Document = Jsoup.parse(input, "windows-1252", "http://astrostem.uz/")
-
-            // Change the value of the src attribute of the img tag
-            val imgElements = document.select("img")
-            for (img in imgElements) {
-                var imgPath = img.attr("src")
-                imgPath = "file:///android_asset/$testId/$imgPath"
-                img.attr("src", imgPath)
-            }
-
-            // All tables
-            val tables = document.select("table")
-
-            // Each table
-            for (table in tables) {
-                val rows: Elements = table.select("tr")
-
-                val questionAndVariants: Elements = rows.select("td")
-                var questionId: Long = -1
-                for (i in 0 until questionAndVariants.size) {
-
-                    if (i == 0) {
+            val mySheet: HSSFSheet = myWorkBook.getSheetAt(testId)
+            val qatorlar: Iterator<Row> = mySheet.rowIterator()
+            var questionId: Long = -1
+            while (qatorlar.hasNext()) {
+                val qator: HSSFRow = qatorlar.next() as HSSFRow
+                val ustunlar: Iterator<Cell> = qator.cellIterator()
+                var ustun_no = 0
+                while (ustunlar.hasNext()) {
+                    val ustun: HSSFCell = ustunlar.next() as HSSFCell
+                    if (ustun_no == 0) {
                         themeDatabase.questionDao().addQuestion(
                             Question(
-                                title = "<b>${questionAndVariants[i]}</b",
-                                testId = (testId - 1)
+                                title = ustun.toString(),
+                                testId = (testId)
                             )
                         ).also { questionId = it }
                     } else {
                         themeDatabase.variantDao().addVariant(
-                            if (i == 1) {
+                            if (ustun_no == 1) {
                                 Variant(
-                                    title = questionAndVariants[i].toString(),
+                                    title = ustun.toString(),
                                     isTrue = true,
                                     questionOwnerId = questionId
                                 )
                             } else {
                                 Variant(
-                                title = questionAndVariants[i].toString(),
-                                isTrue = false,
-                                questionOwnerId = questionId
-                            )
+                                    title = ustun.toString(),
+                                    isTrue = false,
+                                    questionOwnerId = questionId
+                                )
                             }
                         )
                     }
+                    ustun_no++
                 }
-
             }
-
-        } catch (e: IOException) {
-            e.printStackTrace()
+        } catch (e: Exception) {
+            Toast.makeText(applicationContext, "Ma'lumot yuklanishida xatolik!", Toast.LENGTH_SHORT).show()
         }
-
     }
 
     private fun addThemesToDb() {

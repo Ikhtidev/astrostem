@@ -6,16 +6,22 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import uz.astrostem.astrostem.MyApp
 import uz.astrostem.astrostem.R
+import uz.astrostem.astrostem.database.ThemeDatabase
 import uz.astrostem.astrostem.databinding.FragmentHomeBinding
 import uz.astrostem.astrostem.ui.TestActivity
 import uz.astrostem.astrostem.utils.Constants.Companion.FRAGMENT_TYPE
+import uz.astrostem.astrostem.utils.Constants.Companion.TEST_ID
 import uz.astrostem.astrostem.utils.TYPE
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    private val themeDatabase: ThemeDatabase by lazy {
+        ThemeDatabase.getInstance(MyApp.getContext())
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -58,9 +64,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun setTestViews() {
         binding.apply {
             tvTestName.text = "Sharq astranomiyasi"
-            examCountTests.text = "56"
+            examCountTests.text = themeDatabase.testDao().getAllTests()[0].testsCount.toString()
             examBestResult.text = "70%"
             btnTest1.setOnClickListener {
+                TEST_ID = 0
                 startActivity(Intent(activity, TestActivity::class.java))
             }
 

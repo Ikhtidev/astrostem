@@ -1,10 +1,12 @@
 package uz.astrostem.astrostem.database.dao
 
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import uz.astrostem.astrostem.database.entity.MyTest
 
+@Dao
 interface TestDao {
 
     @Query("select * from my_test order by id")

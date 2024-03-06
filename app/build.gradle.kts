@@ -59,10 +59,13 @@ dependencies {
     implementation("com.github.barteksc:android-pdf-viewer:2.8.2")
 
     //room
-    implementation("androidx.room:room-runtime:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-runtime:2.5.2")
+    kapt("androidx.room:room-compiler:2.5.2")
 
     // jsoup for html render
     implementation("org.jsoup:jsoup:1.13.1")
+
+    // for read .xls file
+    implementation("org.apache.poi:poi:3.17")
 
 }

@@ -56,19 +56,19 @@
         android:fontFamily="@font/ubuntu_regular"
         android:text="@string/select_true_answer"
         android:textColor="@color/black"
-        android:textSize="22sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layoutToolbar" />
 
     <TextView
         android:id="@+id/tvQuestion"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:fontFamily="@font/ubuntu_bold"
         android:text="@string/select_true_answer"
         android:textColor="@color/black"
-        android:textSize="22sp"
+        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layoutDesc" />
 
@@ -83,6 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:id="@+id/radioGroup"
             android:paddingHorizontal="30dp"
             android:paddingVertical="20dp">
 
@@ -139,6 +140,7 @@
                 android:textSize="18sp" />
 
         </RadioGroup>
+
 
     </androidx.core.widget.NestedScrollView>
 
