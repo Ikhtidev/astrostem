@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
-    tools:ignore="UsingOnClickInXml"
-    tools:context=".ui.TestActivity">
+    tools:context=".ui.TestActivity"
+    tools:ignore="UsingOnClickInXml">
 
     <LinearLayout
         android:id="@+id/layoutToolbar"
@@ -75,15 +75,16 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvQuestion">
 
         <RadioGroup
+            android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:id="@+id/radioGroup"
             android:paddingHorizontal="30dp"
             android:paddingVertical="20dp">
 
@@ -141,7 +142,6 @@
 
         </RadioGroup>
 
-
     </androidx.core.widget.NestedScrollView>
 
     <FrameLayout
@@ -167,7 +167,8 @@
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:visibility="gone" />
+            android:visibility="invisible"
+            tools:visibility="visible" />
 
         <LinearLayout
             android:id="@+id/layoutTrueAns"
@@ -175,7 +176,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_btn_next_layout"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="invisible"
+            tools:visibility="invisible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -187,7 +189,7 @@
                 android:text="@string/answer_true"
                 android:textColor="@color/white"
                 android:textSize="26sp"
-                app:drawableStartCompat="@drawable/ic_creator" />
+                app:drawableStartCompat="@drawable/ic_like" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -197,9 +199,9 @@
                 android:background="@drawable/bg_btn_next"
                 android:clickable="true"
                 android:focusable="true"
-                android:onClick="onNextButtonClicked"
                 android:fontFamily="@font/ubuntu_bold"
                 android:gravity="center"
+                android:onClick="onNextButtonClicked"
                 android:paddingVertical="10dp"
                 android:text="@string/next"
                 android:textColor="@color/green"
@@ -214,7 +216,8 @@
             android:layout_height="wrap_content"
             android:background="@drawable/bg_btn_next_red_layout"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="invisible"
+            tools:visibility="invisible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -226,7 +229,7 @@
                 android:text="@string/answer_false"
                 android:textColor="@color/white"
                 android:textSize="26sp"
-                app:drawableStartCompat="@drawable/ic_creator" />
+                app:drawableStartCompat="@drawable/ic_dislike" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -236,9 +239,9 @@
                 android:background="@drawable/bg_btn_next"
                 android:clickable="true"
                 android:focusable="true"
-                android:onClick="onNextButtonClicked"
                 android:fontFamily="@font/ubuntu_bold"
                 android:gravity="center"
+                android:onClick="onNextButtonClicked"
                 android:paddingVertical="10dp"
                 android:text="@string/next"
                 android:textColor="@color/red"

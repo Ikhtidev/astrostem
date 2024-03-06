@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:fontFamily="@font/ubuntu_medium"
-            android:text="@string/mashg_ulotlar"
+            android:text="@string/trainings"
             android:textColor="@color/white"
             android:textSize="24sp" />
 
@@ -40,6 +40,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_theoretical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
@@ -60,7 +61,7 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
-                                android:contentDescription="@string/nazariy_mashg_ulotlar"
+                                android:contentDescription="@string/training_theoretical"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/img_course_theoretical" />
 
@@ -70,9 +71,9 @@
                                 android:layout_height="40dp"
                                 android:layout_gravity="top|end"
                                 android:layout_margin="10dp"
-                                android:contentDescription="@string/nazariy_mashg_ulotlar"
+                                android:contentDescription="@string/training_theoretical"
                                 android:foregroundGravity="center"
-                                android:src="@drawable/ic_save_mark" />
+                                android:src="@drawable/ic_unsave_mark" />
 
                         </FrameLayout>
 
@@ -89,7 +90,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/ubuntu_regular"
                                 android:paddingTop="3dp"
-                                android:text="@string/nazariy_mashg_ulotlar"
+                                android:text="@string/training_theoretical"
                                 android:textColor="@color/black"
                                 android:textSize="20sp" />
 
@@ -123,7 +124,6 @@
                             app:drawableStartCompat="@drawable/ic_creator" />
 
                         <TextView
-                            android:id="@+id/btn_theoretical"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginVertical="5dp"
@@ -143,6 +143,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_practical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="10dp"
@@ -164,7 +165,7 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
-                                android:contentDescription="@string/amaliy_mashg_ulotlar"
+                                android:contentDescription="@string/training_practical"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/img_course_practical" />
 
@@ -174,9 +175,9 @@
                                 android:layout_height="40dp"
                                 android:layout_gravity="top|end"
                                 android:layout_margin="10dp"
-                                android:contentDescription="@string/amaliy_mashg_ulotlar"
+                                android:contentDescription="@string/training_practical"
                                 android:foregroundGravity="center"
-                                android:src="@drawable/ic_save_mark" />
+                                android:src="@drawable/ic_unsave_mark" />
 
                         </FrameLayout>
 
@@ -193,7 +194,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/ubuntu_regular"
                                 android:paddingTop="3dp"
-                                android:text="@string/amaliy_mashg_ulotlar"
+                                android:text="@string/training_practical"
                                 android:textColor="@color/black"
                                 android:textSize="20sp" />
 
@@ -227,7 +228,7 @@
                             app:drawableStartCompat="@drawable/ic_creator" />
 
                         <TextView
-                            android:id="@+id/btn_practical"
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginVertical="5dp"
@@ -247,6 +248,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btn_laboratory"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
@@ -267,7 +269,7 @@
                             <ImageView
                                 android:layout_width="match_parent"
                                 android:layout_height="150dp"
-                                android:contentDescription="@string/laboratoriya_mashg_ulotlar"
+                                android:contentDescription="@string/training_laboratory"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/img_course_laboratory" />
 
@@ -277,9 +279,9 @@
                                 android:layout_height="40dp"
                                 android:layout_gravity="top|end"
                                 android:layout_margin="10dp"
-                                android:contentDescription="@string/laboratoriya_mashg_ulotlar"
+                                android:contentDescription="@string/training_laboratory"
                                 android:foregroundGravity="center"
-                                android:src="@drawable/ic_save_mark" />
+                                android:src="@drawable/ic_unsave_mark" />
 
                         </FrameLayout>
 
@@ -296,7 +298,7 @@
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/ubuntu_regular"
                                 android:paddingTop="3dp"
-                                android:text="@string/laboratoriya_mashg_ulotlar"
+                                android:text="@string/training_laboratory"
                                 android:textColor="@color/black"
                                 android:textSize="20sp" />
 
@@ -330,7 +332,6 @@
                             app:drawableStartCompat="@drawable/ic_creator" />
 
                         <TextView
-                            android:id="@+id/btn_laboratory"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginVertical="5dp"
@@ -359,7 +360,7 @@
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/ubuntu_medium"
-            android:text="@string/krosswords"
+            android:text="@string/crosswords"
             android:textColor="@color/white"
             android:textSize="24sp" />
 
@@ -380,7 +381,7 @@
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="120dp"
-                    android:contentDescription="@string/krosswords"
+                    android:contentDescription="@string/crosswords"
                     android:scaleType="centerCrop"
                     android:src="@drawable/img_crossword" />
 
@@ -396,7 +397,7 @@
                         android:layout_marginHorizontal="10dp"
                         android:fontFamily="@font/ubuntu_regular"
                         android:paddingTop="3dp"
-                        android:text="@string/krosswords1"
+                        android:text="@string/crossword1"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
 
@@ -464,9 +465,9 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnTest1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/btnTest1"
                     android:layout_margin="20dp"
                     app:cardCornerRadius="16dp"
                     app:cardElevation="6dp">
@@ -474,19 +475,19 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/white"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:background="@color/white"
                         android:padding="12dp">
 
                         <TextView
                             android:id="@+id/tvTestName"
                             android:layout_width="300dp"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/ubuntu_bold"
                             android:ellipsize="end"
-                            android:lines="2"
+                            android:fontFamily="@font/ubuntu_bold"
                             android:gravity="center_vertical"
+                            android:lines="2"
                             android:text="@string/app_name"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
@@ -522,7 +523,7 @@
                                 android:fontFamily="@font/ubuntu_regular"
                                 android:paddingHorizontal="10dp"
                                 android:paddingVertical="4dp"
-                                android:text="20%"
+                                android:text="@string/all_test_count"
                                 android:textColor="@color/black"
                                 android:textSize="12sp"
                                 app:drawableStartCompat="@drawable/ic_result" />
@@ -535,27 +536,27 @@
                     android:id="@+id/btnTest2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="20dp"
                     android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="20dp"
                     app:cardCornerRadius="16dp"
                     app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@color/white"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:background="@color/white"
                         android:padding="12dp">
 
                         <TextView
                             android:id="@+id/tvTestName2"
                             android:layout_width="300dp"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/ubuntu_bold"
                             android:ellipsize="end"
-                            android:lines="2"
+                            android:fontFamily="@font/ubuntu_bold"
                             android:gravity="center_vertical"
+                            android:lines="2"
                             android:text="@string/app_name"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
@@ -591,7 +592,7 @@
                                 android:fontFamily="@font/ubuntu_regular"
                                 android:paddingHorizontal="10dp"
                                 android:paddingVertical="4dp"
-                                android:text="20%"
+                                android:text="@string/all_test_count"
                                 android:textColor="@color/black"
                                 android:textSize="12sp"
                                 app:drawableStartCompat="@drawable/ic_result" />
@@ -601,6 +602,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnTest3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
@@ -610,8 +612,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:background="@color/white"
+                        android:gravity="center"
                         android:orientation="vertical"
                         android:padding="12dp">
 
@@ -619,10 +621,10 @@
                             android:id="@+id/tvTestName3"
                             android:layout_width="300dp"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/ubuntu_bold"
                             android:ellipsize="end"
-                            android:lines="2"
+                            android:fontFamily="@font/ubuntu_bold"
                             android:gravity="center_vertical"
+                            android:lines="2"
                             android:text="@string/app_name"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
@@ -658,7 +660,7 @@
                                 android:fontFamily="@font/ubuntu_regular"
                                 android:paddingHorizontal="10dp"
                                 android:paddingVertical="4dp"
-                                android:text="20%"
+                                android:text="@string/all_test_count"
                                 android:textColor="@color/black"
                                 android:textSize="12sp"
                                 app:drawableStartCompat="@drawable/ic_result" />
@@ -668,18 +670,19 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnTest4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="20dp"
                     android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="20dp"
                     app:cardCornerRadius="16dp"
                     app:cardElevation="6dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
                         android:background="@color/white"
+                        android:gravity="center"
                         android:orientation="vertical"
                         android:padding="12dp">
 
@@ -687,10 +690,10 @@
                             android:id="@+id/tvTestName4"
                             android:layout_width="300dp"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/ubuntu_bold"
                             android:ellipsize="end"
-                            android:lines="2"
+                            android:fontFamily="@font/ubuntu_bold"
                             android:gravity="center_vertical"
+                            android:lines="2"
                             android:text="@string/app_name"
                             android:textColor="@color/black"
                             android:textSize="18sp" />
@@ -726,7 +729,7 @@
                                 android:fontFamily="@font/ubuntu_regular"
                                 android:paddingHorizontal="10dp"
                                 android:paddingVertical="4dp"
-                                android:text="20%"
+                                android:text="@string/all_test_count"
                                 android:textColor="@color/black"
                                 android:textSize="12sp"
                                 app:drawableStartCompat="@drawable/ic_result" />

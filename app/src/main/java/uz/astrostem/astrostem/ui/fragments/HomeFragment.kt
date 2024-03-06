@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import uz.astrostem.astrostem.MyApp
 import uz.astrostem.astrostem.R
 import uz.astrostem.astrostem.database.ThemeDatabase
 import uz.astrostem.astrostem.databinding.FragmentHomeBinding
@@ -14,18 +14,21 @@ import uz.astrostem.astrostem.ui.TestActivity
 import uz.astrostem.astrostem.utils.Constants.Companion.FRAGMENT_TYPE
 import uz.astrostem.astrostem.utils.Constants.Companion.TEST_ID
 import uz.astrostem.astrostem.utils.TYPE
+import uz.astrostem.astrostem.vm.MainViewModel
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
     private val themeDatabase: ThemeDatabase by lazy {
-        ThemeDatabase.getInstance(MyApp.getContext())
+        ThemeDatabase.getInstance()
     }
+    private val viewModel by activityViewModels<MainViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentHomeBinding.bind(view)
+        startObservers()
         initViews()
     }
 
@@ -45,52 +48,104 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             btnLaboratory.setOnClickListener {
                 openFragment(TYPE.L)
             }
-            btnSavedTheoretical.setOnClickListener {
-                Toast.makeText(activity, "Nazariy like bosildi", Toast.LENGTH_SHORT).show()
-            }
-            btnSavedPractical.setOnClickListener {
-                Toast.makeText(activity, "Amaliy like bosildi", Toast.LENGTH_SHORT).show()
-            }
-            btnSavedLaboratory.setOnClickListener {
-                Toast.makeText(activity, "Laboratoriya like bosildi", Toast.LENGTH_SHORT).show()
-            }
-
             btnCrossword.setOnClickListener {
-                Toast.makeText(activity, "Krossvord bosildi", Toast.LENGTH_SHORT).show()
+                Toast.makeText(activity, getString(R.string.crossword1), Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun startObservers() {
+        binding.apply {
+            viewModel.getTheoreticalLike.observe(viewLifecycleOwner) { isLiked ->
+                btnSavedTheoretical.setOnClickListener {
+                    viewModel.setTheoreticalLike(!isLiked)
+                }
+                when (isLiked) {
+                    true -> {
+                        btnSavedTheoretical.setImageResource(R.drawable.ic_save_mark)
+                    }
+
+                    false -> {
+                        btnSavedTheoretical.setImageResource(R.drawable.ic_unsave_mark)
+                    }
+                }
+            }
+            viewModel.getPracticalLike.observe(viewLifecycleOwner) { isLiked ->
+                btnSavedPractical.setOnClickListener {
+                    viewModel.setPracticalLike(!isLiked)
+                }
+                when (isLiked) {
+                    true -> {
+                        btnSavedPractical.setImageResource(R.drawable.ic_save_mark)
+                    }
+
+                    false -> {
+                        btnSavedPractical.setImageResource(R.drawable.ic_unsave_mark)
+                    }
+                }
+            }
+            viewModel.getLaboratoryLike.observe(viewLifecycleOwner) { isLiked ->
+                btnSavedLaboratory.setOnClickListener {
+                    viewModel.setLaboratoryLike(!isLiked)
+                }
+                when (isLiked) {
+                    true -> {
+                        btnSavedLaboratory.setImageResource(R.drawable.ic_save_mark)
+                    }
+
+                    false -> {
+                        btnSavedLaboratory.setImageResource(R.drawable.ic_unsave_mark)
+                    }
+                }
             }
         }
     }
 
     private fun setTestViews() {
         binding.apply {
-            tvTestName.text = "Sharq astranomiyasi"
-            examCountTests.text = themeDatabase.testDao().getAllTests()[0].testsCount.toString()
-            examBestResult.text = "70%"
+            val test1 = themeDatabase.testDao().getAllTests()[0]
+            val test2 = themeDatabase.testDao().getAllTests()[1]
+            val test3 = themeDatabase.testDao().getAllTests()[2]
+            val test4 = themeDatabase.testDao().getAllTests()[3]
+
+            tvTestName.text = test1.name
+            examCountTests.text = test1.testsCount.toString()
+            examBestResult.text = getString(R.string.all_test_count, test1.testResult.toString())
             btnTest1.setOnClickListener {
-                TEST_ID = 0
-                startActivity(Intent(activity, TestActivity::class.java))
+                openTestActivity(0)
             }
 
-            tvTestName2.text = "Astranomiyadan 100 ta test 2-kurs"
-            examCountTests2.text = "80"
-            examBestResult2.text = "80%"
+            tvTestName2.text = test2.name
+            examCountTests2.text = test2.testsCount.toString()
+            examBestResult2.text = getString(R.string.all_test_count, test2.testResult.toString())
             btnTest2.setOnClickListener {
-                Toast.makeText(activity, "test 2", Toast.LENGTH_SHORT).show()
+                openTestActivity(1)
             }
 
-            tvTestName3.text = "Астраномиядан русча тест 150 та"
-            examCountTests3.text = "150"
-            examBestResult3.text = "50%"
+            tvTestName3.text = test3.name
+            examCountTests3.text = test3.testsCount.toString()
+            examBestResult3.text = getString(R.string.all_test_count, test3.testResult.toString())
+            btnTest3.setOnClickListener {
+                openTestActivity(2)
+            }
 
-            tvTestName4.text = "Yangicha test astranomiya"
-            examCountTests4.text = "56"
-            examBestResult4.text = "70%"
+            tvTestName4.text = test4.name
+            examCountTests4.text = test4.testsCount.toString()
+            examBestResult4.text = getString(R.string.all_test_count, test4.testResult.toString())
+            btnTest4.setOnClickListener {
+                openTestActivity(3)
+            }
         }
+    }
+
+    private fun openTestActivity(testId: Int) {
+        TEST_ID = testId
+        startActivity(Intent(activity, TestActivity::class.java))
     }
 
     private fun openFragment(fragmentType: TYPE) {
         FRAGMENT_TYPE = fragmentType
-        findNavController().navigate(R.id.action_homeFragment_to_theoreticalFragment)
+        findNavController().navigate(R.id.action_homeFragment_to_courseDetailFragment)
     }
 
     override fun onDestroyView() {

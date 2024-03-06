@@ -33,8 +33,9 @@ import java.io.InputStream
 class SplashActivity : AppCompatActivity() {
 
     private val themeDatabase: ThemeDatabase by lazy {
-        ThemeDatabase.getInstance(this)
+        ThemeDatabase.getInstance()
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
@@ -71,10 +72,12 @@ class SplashActivity : AppCompatActivity() {
 
     private suspend fun addTestsToDb() {
         val tests = ArrayList(themeDatabase.testDao().getAllTests())
-        if(tests.isEmpty()){
-            themeDatabase.testDao().addTest(MyTest(name = "Test savollari. Sharq astronomiyasi (2)", testsCount = 150))
-            themeDatabase.testDao().addTest(MyTest(name = "Test test 1", testsCount = 100))
-            themeDatabase.testDao().addTest(MyTest(name = "Test test 2", testsCount = 50))
+        if (tests.isEmpty()) {
+            themeDatabase.testDao()
+                .addTest(MyTest(name = "Test savollari. Sharq astronomiyasi (2)", testsCount = 150))
+            themeDatabase.testDao().addTest(MyTest(name = "Test test 2", testsCount = 100))
+            themeDatabase.testDao().addTest(MyTest(name = "Test test 3", testsCount = 50))
+            themeDatabase.testDao().addTest(MyTest(name = "Test test 4", testsCount = 200))
         } else {
             delay(500)
         }
@@ -83,7 +86,7 @@ class SplashActivity : AppCompatActivity() {
     private suspend fun addQuestionsToDb() {
         val questions = ArrayList(themeDatabase.questionDao().getAllQuestions())
         if (questions.isEmpty()) {
-            val context:Context = applicationContext
+            val context: Context = applicationContext
             val assetManager = context.assets
             val myInput: InputStream = assetManager.open("questions.xls")
             val myFileSystem = POIFSFileSystem(myInput)
@@ -99,43 +102,47 @@ class SplashActivity : AppCompatActivity() {
     private fun writeOneTestToDb(myWorkBook: HSSFWorkbook, testId: Int) {
         try {
             val mySheet: HSSFSheet = myWorkBook.getSheetAt(testId)
-            val qatorlar: Iterator<Row> = mySheet.rowIterator()
+            val rows: Iterator<Row> = mySheet.rowIterator()
             var questionId: Long = -1
-            while (qatorlar.hasNext()) {
-                val qator: HSSFRow = qatorlar.next() as HSSFRow
-                val ustunlar: Iterator<Cell> = qator.cellIterator()
-                var ustun_no = 0
-                while (ustunlar.hasNext()) {
-                    val ustun: HSSFCell = ustunlar.next() as HSSFCell
-                    if (ustun_no == 0) {
+            while (rows.hasNext()) {
+                val row: HSSFRow = rows.next() as HSSFRow
+                val cells: Iterator<Cell> = row.cellIterator()
+                var cellNumber = 0
+                while (cells.hasNext()) {
+                    val cell: HSSFCell = cells.next() as HSSFCell
+                    if (cellNumber == 0) {
                         themeDatabase.questionDao().addQuestion(
                             Question(
-                                title = ustun.toString(),
+                                title = cell.toString(),
                                 testId = (testId)
                             )
                         ).also { questionId = it }
                     } else {
                         themeDatabase.variantDao().addVariant(
-                            if (ustun_no == 1) {
+                            if (cellNumber == 1) {
                                 Variant(
-                                    title = ustun.toString(),
+                                    title = cell.toString(),
                                     isTrue = true,
                                     questionOwnerId = questionId
                                 )
                             } else {
                                 Variant(
-                                    title = ustun.toString(),
+                                    title = cell.toString(),
                                     isTrue = false,
                                     questionOwnerId = questionId
                                 )
                             }
                         )
                     }
-                    ustun_no++
+                    cellNumber++
                 }
             }
         } catch (e: Exception) {
-            Toast.makeText(applicationContext, "Ma'lumot yuklanishida xatolik!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                applicationContext,
+                getString(R.string.error_loading_data),
+                Toast.LENGTH_SHORT
+            ).show()
         }
     }
 

@@ -18,7 +18,7 @@ class TestActivity : AppCompatActivity() {
     }
 
     private val themeDatabase: ThemeDatabase by lazy {
-        ThemeDatabase.getInstance(this)
+        ThemeDatabase.getInstance()
     }
     private lateinit var questionsWithVariants: List<QuestionWithVariant>
     private var selectedAnswer = ""
@@ -33,14 +33,22 @@ class TestActivity : AppCompatActivity() {
         }
         questionsWithVariants = themeDatabase.questionDao().getQuestionsWithVariants(TEST_ID)
 
+        setViewsVisibility()
         setTestViews(questionsWithVariants[currentTest])
     }
 
-    private fun setTestViews(questionWithVariant: QuestionWithVariant) {
+    private fun setViewsVisibility() {
+        binding.radioBtn1.isEnabled = true
+        binding.radioBtn2.isEnabled = true
+        binding.radioBtn3.isEnabled = true
+        binding.radioBtn4.isEnabled = true
         binding.radioGroup.clearCheck()
-        binding.btnCheck.visibility = View.GONE
-        binding.layoutTrueAns.visibility = View.GONE
-        binding.layoutFalseAns.visibility = View.GONE
+        binding.btnCheck.visibility = View.INVISIBLE
+        binding.layoutTrueAns.visibility = View.INVISIBLE
+        binding.layoutFalseAns.visibility = View.INVISIBLE
+    }
+
+    private fun setTestViews(questionWithVariant: QuestionWithVariant) {
         binding.tvQuestion.text = questionWithVariant.question.title
         val variants = questionWithVariant.variants.shuffled()
         val trueAnswer = variants.filter { variant -> variant.isTrue == true }
@@ -55,6 +63,10 @@ class TestActivity : AppCompatActivity() {
 
         binding.btnCheck.setOnClickListener {
             binding.btnCheck.visibility = View.GONE
+            binding.radioBtn1.isEnabled = false
+            binding.radioBtn2.isEnabled = false
+            binding.radioBtn3.isEnabled = false
+            binding.radioBtn4.isEnabled = false
             if (selectedAnswer.equals(trueAnswer[0].title))
                 binding.layoutTrueAns.visibility = View.VISIBLE
             else
@@ -69,6 +81,7 @@ class TestActivity : AppCompatActivity() {
     }
 
     fun onNextButtonClicked(view: View) {
+        setViewsVisibility()
         currentTest+=1
         if (currentTest<questionsWithVariants.size-1)
         setTestViews(questionsWithVariants[currentTest])

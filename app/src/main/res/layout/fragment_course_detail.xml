@@ -18,7 +18,7 @@
             android:src="@drawable/img_course_theoretical_main"
             android:scaleType="centerCrop"
             android:layout_height="300dp"
-            android:contentDescription="@string/nazariy_mashg_ulotlar" />
+            android:contentDescription="@string/training_theoretical" />
 
         <TextView
             android:id="@+id/tv_course_name"
@@ -30,7 +30,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:text="@string/nazariy_mashg_ulotlar"
+            android:text="@string/training_theoretical"
             android:layout_height="wrap_content"/>
 
         <TextView
@@ -69,7 +69,8 @@
             android:textColor="@color/black"
             android:text="@string/about_theoretical"
             android:layout_marginHorizontal="20dp"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            tools:ignore="UnusedAttribute" />
 
         <TextView
             android:layout_width="match_parent"

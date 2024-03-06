@@ -11,10 +11,8 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_theoreticalFragment"
-            app:destination="@id/theoreticalFragment"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim" />
+            android:id="@+id/action_homeFragment_to_courseDetailFragment"
+            app:destination="@id/courseDetailFragment" />
     </fragment>
 
     <fragment
@@ -23,8 +21,8 @@
         android:label="fragment_saved"
         tools:layout="@layout/fragment_saved" >
         <action
-            android:id="@+id/action_savedFragment_to_theoreticalFragment"
-            app:destination="@id/theoreticalFragment" />
+            android:id="@+id/action_savedFragment_to_courseDetailFragment"
+            app:destination="@id/courseDetailFragment" />
     </fragment>
 
     <fragment
@@ -33,8 +31,8 @@
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/theoreticalFragment"
+        android:id="@+id/courseDetailFragment"
         android:name="uz.astrostem.astrostem.ui.fragments.CourseDetailFragment"
-        android:label="fragment_theoretical"
+        android:label="fragment_course_detail"
         tools:layout="@layout/fragment_course_detail" />
 </navigation>

@@ -3,12 +3,12 @@
     <string name="home">Home</string>
     <string name="profile">Profil</string>
     <string name="saved">Saqlanganlar</string>
-    <string name="mashg_ulotlar">Mashg’ulotlar</string>
-    <string name="krosswords">Krossvordlar</string>
-    <string name="krosswords1">Osmon sferasining asosiy elementlari</string>
-    <string name="nazariy_mashg_ulotlar">Nazariy mashg’ulotlar</string>
-    <string name="amaliy_mashg_ulotlar">Amaliy mashg’ulotlar</string>
-    <string name="laboratoriya_mashg_ulotlar">Laboratoriya mashg’uloti</string>
+    <string name="trainings">Mashg’ulotlar</string>
+    <string name="crosswords">Krossvordlar</string>
+    <string name="crossword1">Osmon sferasining asosiy elementlari</string>
+    <string name="training_theoretical">Nazariy mashg’ulotlar</string>
+    <string name="training_practical">Amaliy mashg’ulotlar</string>
+    <string name="training_laboratory">Laboratoriya mashg’uloti</string>
     <string name="kursga_yozilish">Kursni ko’rish</string>
     <string name="admin1">Gulhayo Sayfullayeva va Bozorova Aziza</string>
     <string name="count_23">23</string>
@@ -20,7 +20,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="about_course">Kurs haqida</string>
     <string name="about_practical">Masalalarni yechish umumiy astronomiya kursini o‘zlashtirishga yordam beradi, chunki u fanning nazariy asosini qo‘llanilishini ko‘rsatadi. Har bir bo‘limdagi masalalar qiyinlik darajasi oshib borishi tartibida soddadan murakkabga qarab joylashgan. Masalalardan oldin qisqa nazariy ma’lumotlar va xarakterli masalalarning taxlili keltirilgan.\n\nMasalalar pedagogika universitetlarida o‘rganiladigan umumiy astronomiya kursining barcha asosiy bo‘limlari bo‘yicha tuzilgan. Ko‘pgina masalalarda bir nechta obyektlar bilan yoki Yer sirtining har xil joyida kuzatiladigan bir xil hodisalar bilan bog‘liq yechimlarni topish talab qilinadi. Bunday talab masalalar yechimiga qarab umumlashtiruvchi xulosalarni chiqarish mumkin bo‘lishi uchun qo‘yilgan, chunki har xil variantlar har xil talabalar tomonidan bajarilgan bo‘lishi mumkin. O‘qituvchi masalaning bitta variantining yechimini ko‘rsatib, qolganlarini talabalarga mustaqil yechishga taklif etishi mumkin.\n\nAstronomiyaning barcha bo‘limlari orasidagi o‘zaro bog‘langanlik masalalarni aniq bir bo‘lim bo‘yicha taqsimlashga imkon bermaydi, shu sababli ba’zi bir masalalar joyini almashtirishga to‘g‘ri kelgan.\n\nSferik astronomiyaning planetalar konfiguratsiyasi va sun’iy osmon jismlarini uchirishga doir masalalarni yechishda, masalani yechishni yengillashtiruvchi chizmalarni chizish, olgan natijalarni jadvallarga kiritish foydali bo‘lib, ularni taxlil qilish qonuniyatlarni topishga, zarur xulosalarni chiqarishga va natijalarning haqiqiyligini ko‘rsatishga yordam beradi.\n\nKosmik apparatlar (KA) va yerning sun’iy yo‘ldoshlariga doir masalalar yechishning o‘ziga xos xususiyatlari bor, bunda talaba fikrlash va tasavvur etish qobilyatiga ega bo‘lishi kerak.\n\nIlmiy tadqiqotlardan farqli o‘laroq ushbu masalalarni yechishda juda yuqori aniqlik shart emas. Shu sababli masalalarni har xil aniqlikda yechish mumkin, demak, javoblar ham bir — biridan biroz farq qilishi mumkin. O‘qituvchi masalalarda berilgan raqamlarni ma’lum bir chegarada yaxlitlashi, talabalarni xam shunday qilishga о‘rgatishga haqlidir. O‘quv jarayonida uchta raqam aniqligida xisoblashlarni olib borish yetarli hisoblanadi.</string>
-    <string name="about_theoretical">Ushbu «AstroSTEM» ta’lim tizimi pedagogika oliy o’quv yurtlarining 60110700 – “Fizika va astronomiya, qo’shimcha matematika” ta’lim yo’nalishi talabalari uchun mo’ljallangan. \n\nTizim  fan dasturida keltirilgan barcha mavzularni qamrab olgan va ketma-ketlikda batafsil yoritilgan. Mavzularning yoritilishida fanlararo bog’liqlik inobatga olingan bo’lib, nazariy jihatdan mavzularni bayon etilishida ijodiy yondashilgan. Har bir mavzudan so’ng tayanch iboralar, nazorat savollari, shuningdek, glossariy, talabalar mustaqil o’qishlari uchun astronomik ma’lumotlar, testlar, jadvallar keltirilgan bo’lib, ular nafaqat fanni muvaffaqiyatli o’zlashtirishda, balki talabalarning ilmiy dunyoqarashini kengaytirishda ham xizmat qiladi. \n\nTizimdan nafaqat pedagogika oliy o’quv yurtlarining “Fizika va astronomiya, qo’shimcha matematika” ta’lim yo’nalishi talabalari, balki “Matematika-informatika”, “Tabiiy fanlar” ta’lim yo’nalishlari talabalari uchun ham foydalidir.</string>
+    <string name="about_theoretical">Ushbu «AstroSTEM» ta’lim tizimi pedagogika oliy o’quv yurtlarining 60110700 – “Fizika va astronomiya, qo’shimcha matematika” ta’lim yo’nalishi talabalari uchun mo’ljallangan. \n\nTizim  fan dasturida keltirilgan barcha mavzularni qamrab olgan va ketma-ketlikda batafsil yoritilgan. Mavzularning yoritilishida fanlararo bog’liqlik inobatga olingan bo’lib, nazariy jihatdan mavzularni bayon etilishida ijodiy yondashilgan. Har bir mavzudan so’ng tayanch iboralar, nazorat savollari, shuningdek, glossariy, talabalar mustaqil o’qishlari uchun astronomik ma’lumotlar, testlar, jadvallar keltirilgan bo’lib, ular nafaqat fanni muvaffaqiyatli o’zlashtirishda, balki talabalarning ilmiy dunyoqarashini kengaytirishda ham xizmat qiladi. \n\nTizim nafaqat pedagogika oliy o’quv yurtlarining “Fizika va astronomiya, qo’shimcha matematika” ta’lim yo’nalishi talabalari, balki “Matematika-informatika”, “Tabiiy fanlar” ta’lim yo’nalishlari talabalari uchun ham foydalidir.</string>
     <string name="about_laboratory">Ushbu ”Umumiy astronomiyadan laboratoriya ishlari” ”Fizika-astronomiya” ta’lim yo’nalishlari talabalari uchun mo’ljallangan bo’lib, fanning o’quv dasturi asosida tuzilgan (“Fizika-astronomiya” ta’lim yo’nalishi uchun tasdiqlangan o’quv dastur asos qilib olingan). Tizimning asosiy maqsadi talabalar nazariy bilimlarini amaliyot bilan bog’lash, amaliy ko’nikma va malakalarini yanada mustahkamlash hamda ularni astronomiya faniga bo’lgan qiziqishlarini oshirishga yo’naltirilgan. 15 ta laboratoriya ishlari, 40 dan ortiq laboratoriya topshiriqlari va bir nechta mustaqil mavzular, ko’plab ilovalar keltirilgan.\n\nAkademik litsey, kasb-hunar kollejlari o’qituvchi va o’quvchilari uchun ham foydalidir.</string>
     <string name="course_content">Kurs tarkibi</string>
 
@@ -80,10 +80,13 @@
     <string name="theme_l_13">Kepler qonunlari va sayyoralar konfiguratsiyasi</string>
     <string name="test">test</string>
     <string name="nazorat_savollari">Nazorat savollari</string>
-    <string name="select_true_answer">To\'g\'ri variantni tanlang</string>
+    <string name="select_true_answer">To’g’ri variantni tanlang</string>
     <string name="check">Tekshirish</string>
     <string name="answer_true">To\'g\'ri javob!</string>
-    <string name="answer_false">Noto\'g\'ri javob!</string>
+    <string name="answer_false">Noto’g’ri javob!</string>
     <string name="next">Keyingi</string>
+    <string name="all_test_count">%1$s/30</string>
+    <string name="error_loading_data">Ma’lumot yuklanishida xatolik!</string>
+    <string name="empty_saved_courses">Saqlangan kurslar ro’yxati bo’sh</string>
 
 </resources>
