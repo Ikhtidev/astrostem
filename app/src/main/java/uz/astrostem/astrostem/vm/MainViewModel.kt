@@ -35,4 +35,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             dataStore.setLaboratoryLike(isLike)
         }
     }
+
+    val getTvEmptySavedCourses = dataStore.getTvEmptySavedCourses().asLiveData(Dispatchers.IO)
 }

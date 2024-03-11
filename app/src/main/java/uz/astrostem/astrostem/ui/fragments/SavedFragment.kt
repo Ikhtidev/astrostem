@@ -46,18 +46,16 @@ class SavedFragment : Fragment(R.layout.fragment_saved) {
 
     private fun startObservers() {
         binding.apply {
-
             viewModel.getTheoreticalLike.observe(viewLifecycleOwner) { isLiked ->
                 btnSavedTheoretical.setOnClickListener {
                     viewModel.setTheoreticalLike(!isLiked)
                 }
                 when (isLiked) {
                     true -> {
-                        tvEmptySavedCourses.visibility = View.GONE
                         btnTheoretical.visibility = View.VISIBLE
                     }
+
                     false -> {
-                        tvEmptySavedCourses.visibility = View.VISIBLE
                         btnTheoretical.visibility = View.GONE
                     }
                 }
@@ -68,11 +66,10 @@ class SavedFragment : Fragment(R.layout.fragment_saved) {
                 }
                 when (isLiked) {
                     true -> {
-                        tvEmptySavedCourses.visibility = View.GONE
                         btnPractical.visibility = View.VISIBLE
                     }
+
                     false -> {
-                        tvEmptySavedCourses.visibility = View.VISIBLE
                         btnPractical.visibility = View.GONE
                     }
                 }
@@ -83,14 +80,18 @@ class SavedFragment : Fragment(R.layout.fragment_saved) {
                 }
                 when (isLiked) {
                     true -> {
-                        tvEmptySavedCourses.visibility = View.GONE
                         btnLaboratory.visibility = View.VISIBLE
                     }
+
                     false -> {
-                        tvEmptySavedCourses.visibility = View.VISIBLE
                         btnLaboratory.visibility = View.GONE
                     }
                 }
+            }
+            viewModel.getTvEmptySavedCourses.observe(viewLifecycleOwner) { isLiked ->
+                if (isLiked) {
+                    tvEmptySavedCourses.visibility = View.INVISIBLE
+                } else tvEmptySavedCourses.visibility = View.VISIBLE
             }
         }
     }

@@ -93,4 +93,22 @@ class DataStoreManager {
                 isLiked
             }
     }
+
+    fun getTvEmptySavedCourses():Flow<Boolean>{
+        return dataStore.data
+            .catch { exception ->
+                if (exception is IOException) {
+                    emit(emptyPreferences())
+                } else {
+                    throw exception
+                }
+            }
+            .map { pref ->
+                val isTheoreticalLike = pref[isTheoreticalLiked] ?: false
+                val isPracticalLike = pref[isPracticalLiked] ?: false
+                val isLaboratoryLike = pref[isLaboratoryLiked] ?: false
+                val isLiked= isTheoreticalLike && isPracticalLike && isLaboratoryLike
+                isLiked
+            }
+    }
 }
