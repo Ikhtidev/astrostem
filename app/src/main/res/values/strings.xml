@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">astrostem</string>
+    <string name="app_name">Astrostem</string>
     <string name="home">Home</string>
     <string name="profile">Profil</string>
     <string name="saved">Saqlanganlar</string>
@@ -88,5 +88,7 @@
     <string name="all_test_count">%1$s/30</string>
     <string name="error_loading_data">Ma’lumot yuklanishida xatolik!</string>
     <string name="empty_saved_courses">Saqlangan kurslar ro’yxati bo’sh</string>
+    <string name="removed_from_saved">Saqlanganlardan olib tashlandi</string>
+    <string name="added_to_saved">Saqlanganlarga qo\'shildi</string>
 
 </resources>

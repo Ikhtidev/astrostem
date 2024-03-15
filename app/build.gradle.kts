@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "uz.astrostem.astrostem"
+    namespace = "uz.sayfullayeva.astrostem"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "uz.astrostem.astrostem"
+        applicationId = "uz.sayfullayeva.astrostem"
         minSdk = 21
         targetSdk = 34
         versionCode = 1
@@ -79,6 +79,5 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
-
 
 }

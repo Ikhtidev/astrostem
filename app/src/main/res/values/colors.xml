@@ -12,5 +12,4 @@
     <color name="bottom_nav_background">#FFFFFFFF</color>
     <color name="bottom_nav_item">#FF000000</color>
     <color name="bottom_nav_selected_item">#2E7EFF</color>
-
 </resources>

@@ -24,18 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tvEmptySavedCourses"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/ubuntu_regular"
-            android:gravity="center"
-            android:text="@string/empty_saved_courses"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            tools:visibility="invisible" />
-
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -360,6 +348,18 @@
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/tvEmptySavedCourses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/ubuntu_regular"
+            android:gravity="center"
+            android:text="@string/empty_saved_courses"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:visibility="visible" />
 
     </FrameLayout>
 

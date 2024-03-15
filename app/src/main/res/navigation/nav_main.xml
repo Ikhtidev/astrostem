@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="uz.astrostem.astrostem.ui.fragments.HomeFragment"
+        android:name="uz.sayfullayeva.astrostem.ui.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/savedFragment"
-        android:name="uz.astrostem.astrostem.ui.fragments.SavedFragment"
+        android:name="uz.sayfullayeva.astrostem.ui.fragments.SavedFragment"
         android:label="fragment_saved"
         tools:layout="@layout/fragment_saved" >
         <action
@@ -27,12 +27,12 @@
 
     <fragment
         android:id="@+id/profileFragment"
-        android:name="uz.astrostem.astrostem.ui.fragments.ProfileFragment"
+        android:name="uz.sayfullayeva.astrostem.ui.fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/courseDetailFragment"
-        android:name="uz.astrostem.astrostem.ui.fragments.CourseDetailFragment"
+        android:name="uz.sayfullayeva.astrostem.ui.fragments.CourseDetailFragment"
         android:label="fragment_course_detail"
         tools:layout="@layout/fragment_course_detail" />
 </navigation>

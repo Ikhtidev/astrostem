@@ -15,5 +15,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "astrostem"
+rootProject.name = "Astrostem"
 include(":app")

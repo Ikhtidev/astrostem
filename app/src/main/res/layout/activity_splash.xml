@@ -18,4 +18,4 @@
         app:lottie_loop="true"
         app:lottie_repeatCount="-1" />
 
-  </FrameLayout>
+</FrameLayout>
