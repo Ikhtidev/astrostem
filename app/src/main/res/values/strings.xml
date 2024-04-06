@@ -10,7 +10,10 @@
     <string name="training_practical">Amaliy mashg’ulotlar</string>
     <string name="training_laboratory">Laboratoriya mashg’uloti</string>
     <string name="kursga_yozilish">Kursni ko’rish</string>
-    <string name="admin1">Gulhayo Sayfullayeva va Bozorova Aziza</string>
+    <string name="admins">Gulhayo Sayfullayeva\nSunnatova O’g’iloy, Bozorova Aziza</string>
+    <string name="admin1">Gulhayo\nSayfullayeva</string>
+    <string name="admin2">Sunnatova\nO’g’iloy</string>
+    <string name="admin3">Bozorova\nAziza</string>
     <string name="count_23">23</string>
     <string name="count_16">16</string>
     <string name="count_13">13</string>
@@ -90,5 +93,14 @@
     <string name="empty_saved_courses">Saqlangan kurslar ro’yxati bo’sh</string>
     <string name="removed_from_saved">Saqlanganlardan olib tashlandi</string>
     <string name="added_to_saved">Saqlanganlarga qo\'shildi</string>
+    <string name="result_text">Test tugadi, 30 tadan %1$s ta to\'g\'ri</string>
+    <string name="result_best_text">%1$sdan olingan 30 talik testlardan eng yuqori natijangiz %2$s ga teng.</string>
+    <string name="about_app">Dastur haqida</string>
+    <string name="about_app_text">Ushbu "Astrostem" mobil ilovasi pedagogika oliy o’quv yurtlarining 60110700 – “Fizika va astronomiya, qo’shimcha matematika” ta’lim yo’nalishi talabalari uchun mo’ljallangan. Tizim fan dasturida keltirilgan barcha mavzularni qamrab olgan va ketma-ketlikda batafsil yoritilgan. Mavzularning yoritilishida fanlararo bog’liqlik inobatga olingan bo’lib, nazariy jihatdan mavzularni bayon etilishida ijodiy yondashilgan. Tizim talabalarning ilmiy dunyoqarashini kengaytirishda ham xizmat qiladi. Tizimdan nafaqat pedagogika oliy o’quv yurtlarining “Fizika va astronomiya, qo’shimcha matematika” ta’lim yo’nalishi talabalari, balki “Matematika-informatika”, “Tabiiy fanlar” fakultetlari talabalari uchun ham foydalidir.
+</string>
+    <string name="your_results">Natijalaringiz:</string>
+    <string name="occupation2">Mustaqil izlanuvchi</string>
+    <string name="occupation1">O\'qituvchi</string>
+    <string name="occupation3">Talaba</string>
 
 </resources>

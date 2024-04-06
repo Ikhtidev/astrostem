@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import uz.sayfullayeva.astrostem.utils.DataStoreManager
 
-class MainViewModel(application: Application) : AndroidViewModel(application) {
+class DataStoreViewModel(application: Application) : AndroidViewModel(application) {
 
     private val dataStore = DataStoreManager()
 

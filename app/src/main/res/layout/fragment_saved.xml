@@ -114,7 +114,7 @@
                             android:fontFamily="@font/ubuntu_light"
                             android:paddingHorizontal="10dp"
                             android:paddingVertical="4dp"
-                            android:text="@string/admin1"
+                            android:text="@string/admins"
                             android:textColor="@color/black"
                             android:textSize="12sp"
                             app:drawableStartCompat="@drawable/ic_creator" />
@@ -216,7 +216,7 @@
                             android:fontFamily="@font/ubuntu_light"
                             android:paddingHorizontal="10dp"
                             android:paddingVertical="4dp"
-                            android:text="@string/admin1"
+                            android:text="@string/admins"
                             android:textColor="@color/black"
                             android:textSize="12sp"
                             app:drawableStartCompat="@drawable/ic_creator" />
@@ -321,7 +321,7 @@
                             android:fontFamily="@font/ubuntu_light"
                             android:paddingHorizontal="10dp"
                             android:paddingVertical="4dp"
-                            android:text="@string/admin1"
+                            android:text="@string/admins"
                             android:textColor="@color/black"
                             android:textSize="12sp"
                             app:drawableStartCompat="@drawable/ic_creator" />

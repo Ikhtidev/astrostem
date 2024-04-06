@@ -3,7 +3,6 @@ package uz.sayfullayeva.astrostem.ui.fragments
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -15,7 +14,7 @@ import uz.sayfullayeva.astrostem.ui.TestActivity
 import uz.sayfullayeva.astrostem.utils.Constants.Companion.FRAGMENT_TYPE
 import uz.sayfullayeva.astrostem.utils.Constants.Companion.TEST_ID
 import uz.sayfullayeva.astrostem.utils.TYPE
-import uz.sayfullayeva.astrostem.vm.MainViewModel
+import uz.sayfullayeva.astrostem.vm.DataStoreViewModel
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
@@ -24,7 +23,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val themeDatabase: ThemeDatabase by lazy {
         ThemeDatabase.getInstance()
     }
-    private val viewModel by activityViewModels<MainViewModel>()
+    private val viewModel by activityViewModels<DataStoreViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -103,23 +102,23 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private fun setTestViews() {
         binding.apply {
             val test1 = themeDatabase.testDao().getAllTests()[0]
-//            val test2 = themeDatabase.testDao().getAllTests()[1]
+            val test2 = themeDatabase.testDao().getAllTests()[1]
 //            val test3 = themeDatabase.testDao().getAllTests()[2]
 //            val test4 = themeDatabase.testDao().getAllTests()[3]
 
-            tvTestName.text = test1.name
-            examCountTests.text = test1.testsCount.toString()
-            examBestResult.text = getString(R.string.all_test_count, test1.testResult.toString())
+            tvTestName1.text = test1.name
+            examCountTests1.text = test1.testsCount.toString()
+            examBestResult1.text = getString(R.string.all_test_count, test1.testResult.toString())
             btnTest1.setOnClickListener {
                 openTestActivity(0)
             }
 
-//            tvTestName2.text = test2.name
-//            examCountTests2.text = test2.testsCount.toString()
-//            examBestResult2.text = getString(R.string.all_test_count, test2.testResult.toString())
-//            btnTest2.setOnClickListener {
-//                openTestActivity(1)
-//            }
+            tvTestName2.text = test2.name
+            examCountTests2.text = test2.testsCount.toString()
+            examBestResult2.text = getString(R.string.all_test_count, test2.testResult.toString())
+            btnTest2.setOnClickListener {
+                openTestActivity(1)
+            }
 //
 //            tvTestName3.text = test3.name
 //            examCountTests3.text = test3.testsCount.toString()
@@ -150,5 +149,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        setTestViews()
     }
 }

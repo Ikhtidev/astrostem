@@ -5,10 +5,12 @@ import android.view.View
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import uz.sayfullayeva.astrostem.R
 import uz.sayfullayeva.astrostem.database.ThemeDatabase
 import uz.sayfullayeva.astrostem.database.entity.QuestionWithVariant
 import uz.sayfullayeva.astrostem.databinding.ActivityTestBinding
 import uz.sayfullayeva.astrostem.utils.Constants.Companion.TEST_ID
+import java.util.Collections
 
 class TestActivity : AppCompatActivity() {
 
@@ -19,8 +21,9 @@ class TestActivity : AppCompatActivity() {
     private val themeDatabase: ThemeDatabase by lazy {
         ThemeDatabase.getInstance()
     }
-    private lateinit var questionsWithVariants: List<QuestionWithVariant>
+    private lateinit var questionsWithVariants: MutableList<QuestionWithVariant>
     private var selectedAnswer = ""
+    private var correctAnswer = 0
     private var currentTest: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,8 +33,10 @@ class TestActivity : AppCompatActivity() {
         binding.btnBack.setOnClickListener {
             finish()
         }
-        questionsWithVariants = themeDatabase.questionDao().getQuestionsWithVariants(TEST_ID)
-
+        questionsWithVariants =
+            themeDatabase.questionDao().getQuestionsWithVariants(TEST_ID).toMutableList()
+        questionsWithVariants.shuffle()
+        questionsWithVariants = questionsWithVariants.subList(0, 30)
         setViewsVisibility()
         setTestViews(questionsWithVariants[currentTest])
 
@@ -49,12 +54,14 @@ class TestActivity : AppCompatActivity() {
     }
 
     private fun setTestViews(questionWithVariant: QuestionWithVariant) {
+        binding.tvCurrentTest.text =
+            getString(R.string.all_test_count, (currentTest + 1).toString())
         binding.tvQuestion.text = questionWithVariant.question.title
         val variants = questionWithVariant.variants.shuffled()
         val trueAnswer = variants.filter { variant -> variant.isTrue == true }
         binding.radioBtn1.text = variants[0].title
         binding.radioBtn2.text = variants[1].title
-        if (variants.size > 2){
+        if (variants.size > 2) {
             binding.apply {
                 radioBtn3.text = variants[2].title
                 radioBtn4.text = variants[3].title
@@ -67,13 +74,13 @@ class TestActivity : AppCompatActivity() {
             binding.radioBtn2.isEnabled = false
             binding.radioBtn3.isEnabled = false
             binding.radioBtn4.isEnabled = false
-            if (selectedAnswer.equals(trueAnswer[0].title))
+            if (selectedAnswer.equals(trueAnswer[0].title)) {
                 binding.layoutTrueAns.visibility = View.VISIBLE
-            else
-                binding.layoutFalseAns.visibility = View.VISIBLE
+                correctAnswer += 1
+            }
+            else binding.layoutFalseAns.visibility = View.VISIBLE
         }
     }
-
 
     fun onRadioButtonClicked(view: View) {
         selectedAnswer = (view as RadioButton).text.toString()
@@ -82,9 +89,17 @@ class TestActivity : AppCompatActivity() {
 
     fun onNextButtonClicked(view: View) {
         setViewsVisibility()
-        currentTest+=1
-        if (currentTest<questionsWithVariants.size-1)
+        currentTest += 1
+        if (currentTest < questionsWithVariants.size)
             setTestViews(questionsWithVariants[currentTest])
-        else Toast.makeText(this, "testlar tugadi", Toast.LENGTH_SHORT).show()
+        else {
+            Toast.makeText(this, getString(R.string.result_text, correctAnswer.toString()), Toast.LENGTH_SHORT).show()
+            val myTest = themeDatabase.testDao().getAllTests()[TEST_ID]
+            if (correctAnswer>myTest.testResult){
+                myTest.testResult = correctAnswer
+                themeDatabase.testDao().updateTest(myTest)
+            }
+            finish()
+        }
     }
 }

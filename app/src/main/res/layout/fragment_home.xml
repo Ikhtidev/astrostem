@@ -118,7 +118,7 @@
                             android:fontFamily="@font/ubuntu_light"
                             android:paddingHorizontal="10dp"
                             android:paddingVertical="4dp"
-                            android:text="@string/admin1"
+                            android:text="@string/admins"
                             android:textColor="@color/black"
                             android:textSize="12sp"
                             app:drawableStartCompat="@drawable/ic_creator" />
@@ -220,7 +220,7 @@
                             android:fontFamily="@font/ubuntu_light"
                             android:paddingHorizontal="10dp"
                             android:paddingVertical="4dp"
-                            android:text="@string/admin1"
+                            android:text="@string/admins"
                             android:textColor="@color/black"
                             android:textSize="12sp"
                             app:drawableStartCompat="@drawable/ic_creator" />
@@ -322,7 +322,7 @@
                             android:fontFamily="@font/ubuntu_light"
                             android:paddingHorizontal="10dp"
                             android:paddingVertical="4dp"
-                            android:text="@string/admin1"
+                            android:text="@string/admins"
                             android:textColor="@color/black"
                             android:textSize="12sp"
                             app:drawableStartCompat="@drawable/ic_creator" />
@@ -475,7 +475,7 @@
                         android:padding="12dp">
 
                         <TextView
-                            android:id="@+id/tvTestName"
+                            android:id="@+id/tvTestName1"
                             android:layout_width="300dp"
                             android:layout_height="wrap_content"
                             android:ellipsize="end"
@@ -493,7 +493,7 @@
                             android:paddingVertical="8dp">
 
                             <TextView
-                                android:id="@+id/examCountTests"
+                                android:id="@+id/examCountTests1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -508,7 +508,7 @@
                                 app:drawableStartCompat="@drawable/ic_questions" />
 
                             <TextView
-                                android:id="@+id/examBestResult"
+                                android:id="@+id/examBestResult1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="4dp"
@@ -526,74 +526,74 @@
 
                 </com.google.android.material.card.MaterialCardView>
 
-                <!--                <com.google.android.material.card.MaterialCardView-->
-                <!--                    android:id="@+id/btnTest2"-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_marginHorizontal="10dp"-->
-                <!--                    android:layout_marginVertical="20dp"-->
-                <!--                    app:cardCornerRadius="16dp"-->
-                <!--                    app:cardElevation="6dp">-->
+                                <com.google.android.material.card.MaterialCardView
+                                    android:id="@+id/btnTest2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="10dp"
+                                    android:layout_marginVertical="20dp"
+                                    app:cardCornerRadius="16dp"
+                                    app:cardElevation="6dp">
 
-                <!--                    <LinearLayout-->
-                <!--                        android:layout_width="match_parent"-->
-                <!--                        android:layout_height="wrap_content"-->
-                <!--                        android:background="@color/white"-->
-                <!--                        android:gravity="center"-->
-                <!--                        android:orientation="vertical"-->
-                <!--                        android:padding="12dp">-->
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@color/white"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:padding="12dp">
 
-                <!--                        <TextView-->
-                <!--                            android:id="@+id/tvTestName2"-->
-                <!--                            android:layout_width="300dp"-->
-                <!--                            android:layout_height="wrap_content"-->
-                <!--                            android:ellipsize="end"-->
-                <!--                            android:fontFamily="@font/ubuntu_bold"-->
-                <!--                            android:gravity="center_vertical"-->
-                <!--                            android:lines="2"-->
-                <!--                            android:text="@string/app_name"-->
-                <!--                            android:textColor="@color/black"-->
-                <!--                            android:textSize="18sp" />-->
+                                        <TextView
+                                            android:id="@+id/tvTestName2"
+                                            android:layout_width="300dp"
+                                            android:layout_height="wrap_content"
+                                            android:ellipsize="end"
+                                            android:fontFamily="@font/ubuntu_bold"
+                                            android:gravity="center_vertical"
+                                            android:lines="2"
+                                            android:text="@string/app_name"
+                                            android:textColor="@color/black"
+                                            android:textSize="18sp" />
 
-                <!--                        <LinearLayout-->
-                <!--                            android:layout_width="match_parent"-->
-                <!--                            android:layout_height="wrap_content"-->
-                <!--                            android:orientation="horizontal"-->
-                <!--                            android:paddingVertical="8dp">-->
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            android:paddingVertical="8dp">
 
-                <!--                            <TextView-->
-                <!--                                android:id="@+id/examCountTests2"-->
-                <!--                                android:layout_width="wrap_content"-->
-                <!--                                android:layout_height="wrap_content"-->
-                <!--                                android:layout_marginHorizontal="4dp"-->
-                <!--                                android:background="@drawable/bg_white_stroked"-->
-                <!--                                android:drawablePadding="5dp"-->
-                <!--                                android:fontFamily="@font/ubuntu_regular"-->
-                <!--                                android:paddingHorizontal="10dp"-->
-                <!--                                android:paddingVertical="4dp"-->
-                <!--                                android:text="@string/count_23"-->
-                <!--                                android:textColor="@color/black"-->
-                <!--                                android:textSize="12sp"-->
-                <!--                                app:drawableStartCompat="@drawable/ic_questions" />-->
+                                            <TextView
+                                                android:id="@+id/examCountTests2"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginHorizontal="4dp"
+                                                android:background="@drawable/bg_white_stroked"
+                                                android:drawablePadding="5dp"
+                                                android:fontFamily="@font/ubuntu_regular"
+                                                android:paddingHorizontal="10dp"
+                                                android:paddingVertical="4dp"
+                                                android:text="@string/count_23"
+                                                android:textColor="@color/black"
+                                                android:textSize="12sp"
+                                                app:drawableStartCompat="@drawable/ic_questions" />
 
-                <!--                            <TextView-->
-                <!--                                android:id="@+id/examBestResult2"-->
-                <!--                                android:layout_width="wrap_content"-->
-                <!--                                android:layout_height="wrap_content"-->
-                <!--                                android:layout_marginHorizontal="4dp"-->
-                <!--                                android:background="@drawable/bg_white_stroked"-->
-                <!--                                android:drawablePadding="5dp"-->
-                <!--                                android:fontFamily="@font/ubuntu_regular"-->
-                <!--                                android:paddingHorizontal="10dp"-->
-                <!--                                android:paddingVertical="4dp"-->
-                <!--                                android:text="@string/all_test_count"-->
-                <!--                                android:textColor="@color/black"-->
-                <!--                                android:textSize="12sp"-->
-                <!--                                app:drawableStartCompat="@drawable/ic_result" />-->
-                <!--                        </LinearLayout>-->
-                <!--                    </LinearLayout>-->
+                                            <TextView
+                                                android:id="@+id/examBestResult2"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginHorizontal="4dp"
+                                                android:background="@drawable/bg_white_stroked"
+                                                android:drawablePadding="5dp"
+                                                android:fontFamily="@font/ubuntu_regular"
+                                                android:paddingHorizontal="10dp"
+                                                android:paddingVertical="4dp"
+                                                android:text="@string/all_test_count"
+                                                android:textColor="@color/black"
+                                                android:textSize="12sp"
+                                                app:drawableStartCompat="@drawable/ic_result" />
+                                        </LinearLayout>
+                                    </LinearLayout>
 
-                <!--                </com.google.android.material.card.MaterialCardView>-->
+                                </com.google.android.material.card.MaterialCardView>
 
                 <!--                <com.google.android.material.card.MaterialCardView-->
                 <!--                    android:id="@+id/btnTest3"-->

@@ -73,8 +73,9 @@ class SplashActivity : AppCompatActivity() {
         val tests = ArrayList(themeDatabase.testDao().getAllTests())
         if (tests.isEmpty()) {
             themeDatabase.testDao()
-                .addTest(MyTest(name = "Test savollari. Sharq astronomiyasi (2)", testsCount = 150))
-//            themeDatabase.testDao().addTest(MyTest(name = "Test test 2", testsCount = 100))
+                .addTest(MyTest(name = "Sharq astronomiyasi(3-kurs)", testsCount = 150))
+            themeDatabase.testDao()
+                .addTest(MyTest(name = "Test test 2", testsCount = 100))
 //            themeDatabase.testDao().addTest(MyTest(name = "Test test 3", testsCount = 50))
 //            themeDatabase.testDao().addTest(MyTest(name = "Test test 4", testsCount = 200))
         } else {
@@ -90,7 +91,7 @@ class SplashActivity : AppCompatActivity() {
             val myInput: InputStream = assetManager.open("questions.xls")
             val myFileSystem = POIFSFileSystem(myInput)
             val myWorkBook = HSSFWorkbook(myFileSystem)
-            for (i in 0..0) {
+            for (i in 0..1) {
                 writeOneTestToDb(myWorkBook, i)
             }
         } else {

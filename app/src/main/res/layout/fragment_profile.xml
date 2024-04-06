@@ -1,16 +1,467 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_home"
+    android:orientation="vertical"
     tools:context=".ui.fragments.ProfileFragment">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="26sp"
-        android:textColor="@color/black"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/profile" />
+        android:layout_gravity="center_vertical"
+        android:background="@color/my_primary_variant"
+        android:fontFamily="@font/ubuntu_bold"
+        android:gravity="center"
+        android:paddingVertical="10dp"
+        android:text="@string/profile"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
-</FrameLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/ubuntu_bold"
+                android:gravity="start"
+                android:paddingHorizontal="20dp"
+                android:paddingVertical="5dp"
+                android:text="@string/your_results"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="5dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar1"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="start"
+                        android:indeterminateOnly="false"
+                        android:progress="70"
+                        android:progressDrawable="@drawable/item_circle" />
+
+                    <TextView
+                        android:id="@+id/tvTestResult1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:maxHeight="100dp"
+                        android:text="@string/result_best_text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="5dp">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="start"
+                        android:indeterminateOnly="false"
+                        android:progress="70"
+                        android:progressDrawable="@drawable/item_circle" />
+
+                    <TextView
+                        android:id="@+id/tvTestResult2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="100dp"
+                        android:layout_marginEnd="10dp"
+                        android:fontFamily="@font/ubuntu_medium"
+                        android:maxHeight="100dp"
+                        android:text="@string/result_best_text"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:text="@string/about_app"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:fontFamily="@font/ubuntu_bold"
+                android:justificationMode="inter_word"
+                android:paddingVertical="10dp"
+                android:text="@string/about_app_text"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                tools:targetApi="o" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/ubuntu_bold"
+                            android:padding="10dp"
+                            android:paddingVertical="10dp"
+                            android:text="@string/admin1"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:drawablePadding="10dp"
+                            android:fontFamily="@font/ubuntu_regular"
+                            android:padding="10dp"
+                            android:paddingVertical="10dp"
+                            android:text="@string/occupation1"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:drawableStartCompat="@drawable/ic_occupation" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:paddingVertical="10dp">
+
+                            <ImageView
+                                android:id="@+id/ownerPhone1"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="10dp"
+                                android:background="@drawable/bg_communicate_icons"
+                                android:contentDescription="@string/app_name"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_call" />
+
+                            <ImageView
+                                android:id="@+id/ownerEmail1"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/bg_communicate_icons"
+                                android:contentDescription="@string/app_name"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_email" />
+
+                            <ImageView
+                                android:id="@+id/ownerTelegram1"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/bg_communicate_icons"
+                                android:contentDescription="@string/app_name"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_telegram" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="2"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/app_name"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_admin1" />
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/ubuntu_bold"
+                            android:padding="10dp"
+                            android:paddingVertical="10dp"
+                            android:text="@string/admin2"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:drawablePadding="10dp"
+                            android:fontFamily="@font/ubuntu_regular"
+                            android:padding="10dp"
+                            android:paddingVertical="10dp"
+                            android:text="@string/occupation2"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:drawableStartCompat="@drawable/ic_occupation" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:paddingVertical="10dp">
+
+                            <ImageView
+                                android:id="@+id/ownerPhone2"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="10dp"
+                                android:background="@drawable/bg_communicate_icons"
+                                android:contentDescription="@string/app_name"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_call" />
+
+                            <ImageView
+                                android:id="@+id/ownerEmail2"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/bg_communicate_icons"
+                                android:contentDescription="@string/app_name"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_email" />
+
+                            <ImageView
+                                android:id="@+id/ownerTelegram2"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/bg_communicate_icons"
+                                android:contentDescription="@string/app_name"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_telegram" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="2"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/app_name"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_admin2" />
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/ubuntu_bold"
+                            android:padding="10dp"
+                            android:paddingVertical="10dp"
+                            android:text="@string/admin3"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:drawablePadding="10dp"
+                            android:fontFamily="@font/ubuntu_regular"
+                            android:padding="10dp"
+                            android:paddingVertical="10dp"
+                            android:text="@string/occupation3"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            app:drawableStartCompat="@drawable/ic_occupation" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:paddingVertical="10dp">
+
+                            <ImageView
+                                android:id="@+id/ownerPhone3"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="10dp"
+                                android:background="@drawable/bg_communicate_icons"
+                                android:contentDescription="@string/app_name"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_call" />
+
+                            <ImageView
+                                android:id="@+id/ownerEmail3"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginHorizontal="10dp"
+                                android:background="@drawable/bg_communicate_icons"
+                                android:contentDescription="@string/app_name"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_email" />
+
+                            <ImageView
+                                android:id="@+id/ownerTelegram3"
+                                android:layout_width="48dp"
+                                android:layout_height="48dp"
+                                android:layout_marginEnd="10dp"
+                                android:background="@drawable/bg_communicate_icons"
+                                android:contentDescription="@string/app_name"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_telegram" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="200dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight="2"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="10dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/app_name"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_admin3" />
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

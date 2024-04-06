@@ -10,13 +10,13 @@ import uz.sayfullayeva.astrostem.R
 import uz.sayfullayeva.astrostem.databinding.FragmentSavedBinding
 import uz.sayfullayeva.astrostem.utils.Constants
 import uz.sayfullayeva.astrostem.utils.TYPE
-import uz.sayfullayeva.astrostem.vm.MainViewModel
+import uz.sayfullayeva.astrostem.vm.DataStoreViewModel
 
 class SavedFragment : Fragment(R.layout.fragment_saved) {
 
     private var _binding: FragmentSavedBinding? = null
     private val binding get() = _binding!!
-    private val viewModel by activityViewModels<MainViewModel>()
+    private val viewModel by activityViewModels<DataStoreViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
