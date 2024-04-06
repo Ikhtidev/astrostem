@@ -63,7 +63,7 @@
                         android:layout_gravity="start"
                         android:indeterminateOnly="false"
                         android:progress="70"
-                        android:progressDrawable="@drawable/item_circle" />
+                        android:progressDrawable="@drawable/bg_progress_bar" />
 
                     <TextView
                         android:id="@+id/tvTestResult1"
@@ -103,7 +103,7 @@
                         android:layout_gravity="start"
                         android:indeterminateOnly="false"
                         android:progress="70"
-                        android:progressDrawable="@drawable/item_circle" />
+                        android:progressDrawable="@drawable/bg_progress_bar" />
 
                     <TextView
                         android:id="@+id/tvTestResult2"
