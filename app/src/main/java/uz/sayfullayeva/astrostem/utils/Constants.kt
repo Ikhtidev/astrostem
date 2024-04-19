@@ -8,5 +8,6 @@ interface Constants {
         var TEST_ID = 0
         var FRAGMENT_TYPE = TYPE.T
         val THEME_LIST: ArrayList<Theme> = ArrayList()
+        var ONLY_QUESTIONS = ""
     }
 }

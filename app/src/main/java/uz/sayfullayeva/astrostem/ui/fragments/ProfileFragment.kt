@@ -77,7 +77,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     }
 
     private fun openTelegram(telegramLink: String) {
-        val intent = Intent (ACTION_VIEW, Uri.parse("https://t.me/$telegramLink"))
+        val intent = Intent(ACTION_VIEW, Uri.parse("https://t.me/$telegramLink"))
         startActivity(intent)
     }
 

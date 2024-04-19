@@ -10,7 +10,9 @@ import uz.sayfullayeva.astrostem.MyApp
 import uz.sayfullayeva.astrostem.R
 import uz.sayfullayeva.astrostem.database.ThemeDatabase
 import uz.sayfullayeva.astrostem.databinding.FragmentHomeBinding
+import uz.sayfullayeva.astrostem.ui.QuestionsActivity
 import uz.sayfullayeva.astrostem.ui.TestActivity
+import uz.sayfullayeva.astrostem.utils.Constants
 import uz.sayfullayeva.astrostem.utils.Constants.Companion.FRAGMENT_TYPE
 import uz.sayfullayeva.astrostem.utils.Constants.Companion.TEST_ID
 import uz.sayfullayeva.astrostem.utils.TYPE
@@ -119,20 +121,22 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             btnTest2.setOnClickListener {
                 openTestActivity(1)
             }
-//
-//            tvTestName3.text = test3.name
-//            examCountTests3.text = test3.testsCount.toString()
-//            examBestResult3.text = getString(R.string.all_test_count, test3.testResult.toString())
-//            btnTest3.setOnClickListener {
-//                openTestActivity(2)
-//            }
-//
-//            tvTestName4.text = test4.name
-//            examCountTests4.text = test4.testsCount.toString()
+
+            tvTestName3.text = "Вопросы по предмету «Астрономия Востока»"
+            examCountTests3.text = "90"
+//            examBestResult3.visibility = View.INVISIBLE
+            btnTest3.setOnClickListener {
+                Constants.ONLY_QUESTIONS = "Вопросы по предмету «Астрономия Востока»"
+                startActivity(Intent(requireActivity(), QuestionsActivity::class.java))
+            }
+
+            tvTestName4.text = "Yopiq savollar"
+            examCountTests4.text = "150"
 //            examBestResult4.text = getString(R.string.all_test_count, test4.testResult.toString())
-//            btnTest4.setOnClickListener {
-//                openTestActivity(3)
-//            }
+            btnTest4.setOnClickListener {
+                Constants.ONLY_QUESTIONS = "Yopiq savollar"
+                startActivity(Intent(requireActivity(), QuestionsActivity::class.java))
+            }
         }
     }
 

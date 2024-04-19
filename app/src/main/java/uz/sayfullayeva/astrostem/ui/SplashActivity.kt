@@ -75,7 +75,7 @@ class SplashActivity : AppCompatActivity() {
             themeDatabase.testDao()
                 .addTest(MyTest(name = "Sharq astronomiyasi(3-kurs)", testsCount = 150))
             themeDatabase.testDao()
-                .addTest(MyTest(name = "Test test 2", testsCount = 100))
+                .addTest(MyTest(name = "Итоговые тесты по астрономии студентам 2-курса", testsCount = 30))
 //            themeDatabase.testDao().addTest(MyTest(name = "Test test 3", testsCount = 50))
 //            themeDatabase.testDao().addTest(MyTest(name = "Test test 4", testsCount = 200))
         } else {
