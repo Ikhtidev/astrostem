@@ -212,6 +212,13 @@ class SplashActivity : AppCompatActivity() {
         THEME_LIST.add(Theme(name = getString(R.string.theme_l_11), type = TYPE.L))
         THEME_LIST.add(Theme(name = getString(R.string.theme_l_12), type = TYPE.L))
         THEME_LIST.add(Theme(name = getString(R.string.theme_l_13), type = TYPE.L))
+        THEME_LIST.add(Theme(name = getString(R.string.theme_l_14), type = TYPE.L))
+        THEME_LIST.add(Theme(name = getString(R.string.theme_l_15), type = TYPE.L))
+        THEME_LIST.add(Theme(name = getString(R.string.theme_l_16), type = TYPE.L))
+        THEME_LIST.add(Theme(name = getString(R.string.theme_l_17), type = TYPE.L))
+        THEME_LIST.add(Theme(name = getString(R.string.theme_l_18), type = TYPE.L))
+        THEME_LIST.add(Theme(name = getString(R.string.theme_l_19), type = TYPE.L))
+        THEME_LIST.add(Theme(name = getString(R.string.theme_l_20), type = TYPE.L))
     }
 
     private fun startMainActivity() {

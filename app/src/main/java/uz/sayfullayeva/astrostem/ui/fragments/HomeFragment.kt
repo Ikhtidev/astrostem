@@ -51,6 +51,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             btnLaboratory.setOnClickListener {
                 openFragment(TYPE.L)
             }
+            btnVideos.setOnClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_videosFragment)
+            }
 //            btnCrossword.setOnClickListener {
 //                MyApp.showToast(getString(R.string.crossword1))
 //            }

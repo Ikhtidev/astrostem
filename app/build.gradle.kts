@@ -12,8 +12,8 @@ android {
         applicationId = "uz.sayfullayeva.astrostem"
         minSdk = 21
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 3
+        versionName = "1.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -63,7 +63,7 @@ dependencies {
     kapt("androidx.room:room-compiler:2.5.2")
 
     // jsoup for html render
-    implementation("org.jsoup:jsoup:1.13.1")
+//    implementation("org.jsoup:jsoup:1.13.1")
 
     // for read .xls file
     implementation("org.apache.poi:poi:3.17")
@@ -79,5 +79,17 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.5.1")
+
+    //for exoplayer
+//    val mediaVersion = "1.0.1"
+//    implementation("androidx.media3:media3-exoplayer:$mediaVersion")
+//    implementation("androidx.media3:media3-ui:$mediaVersion")
+//    implementation("androidx.media3:media3-exoplayer-dash:$mediaVersion")
+//    implementation("androidx.media3:media3-exoplayer-rtsp:1.1.0")
+
+    implementation("androidx.media3:media3-exoplayer:1.3.1")
+    implementation("androidx.media3:media3-exoplayer-dash:1.3.1")
+    implementation("androidx.media3:media3-ui:1.3.1")
+
 
 }

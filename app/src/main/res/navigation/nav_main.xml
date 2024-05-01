@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_courseDetailFragment"
             app:destination="@id/courseDetailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_videosFragment"
+            app:destination="@id/videosFragment" />
     </fragment>
 
     <fragment
@@ -35,4 +38,9 @@
         android:name="uz.sayfullayeva.astrostem.ui.fragments.CourseDetailFragment"
         android:label="fragment_course_detail"
         tools:layout="@layout/fragment_course_detail" />
+    <fragment
+        android:id="@+id/videosFragment"
+        android:name="uz.sayfullayeva.astrostem.ui.fragments.VideosFragment"
+        android:label="fragment_videos"
+        tools:layout="@layout/fragment_videos" />
 </navigation>

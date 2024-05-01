@@ -305,7 +305,7 @@
                                 android:fontFamily="@font/ubuntu_light"
                                 android:paddingHorizontal="5dp"
                                 android:paddingVertical="4dp"
-                                android:text="@string/count_13"
+                                android:text="@string/count_20"
                                 android:textColor="@color/black"
                                 android:textSize="12sp"
                                 app:drawableStartCompat="@drawable/ic_books_14" />

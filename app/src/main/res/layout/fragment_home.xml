@@ -306,7 +306,7 @@
                                 android:fontFamily="@font/ubuntu_light"
                                 android:paddingHorizontal="5dp"
                                 android:paddingVertical="4dp"
-                                android:text="@string/count_13"
+                                android:text="@string/count_20"
                                 android:textColor="@color/black"
                                 android:textSize="12sp"
                                 app:drawableStartCompat="@drawable/ic_books_14" />
@@ -437,6 +437,18 @@
         <!--            </LinearLayout>-->
 
         <!--        </com.google.android.material.card.MaterialCardView>-->
+
+        <TextView
+            android:id="@+id/btnVideos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/ubuntu_medium"
+            android:text="@string/videos"
+            app:drawableEndCompat="@drawable/ic_video"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
 
         <TextView
             android:layout_width="match_parent"

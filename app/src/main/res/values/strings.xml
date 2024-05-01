@@ -16,7 +16,7 @@
     <string name="admin3">Bozorova\nAziza</string>
     <string name="count_23">23</string>
     <string name="count_16">16</string>
-    <string name="count_13">13</string>
+    <string name="count_20">20</string>
     <string name="count_6">6</string>
     <string name="solve">Yechish</string>
 
@@ -81,6 +81,13 @@
     <string name="theme_l_11">Quyosh aktivligini o‘rganish</string>
     <string name="theme_l_12">Oy harakati va fazalari. Oyning sirt detallarini aniqlash</string>
     <string name="theme_l_13">Kepler qonunlari va sayyoralar konfiguratsiyasi</string>
+    <string name="theme_l_14">Tok manbalarini o‘lchashni o‘rganish</string>
+    <string name="theme_l_15">Elektr qo‘ng‘irog‘ini yig‘ish va uni ishga tushirish</string>
+    <string name="theme_l_16">3D ruchka bilan ishlash</string>
+    <string name="theme_l_17">Eng soda radioni yig‘ish va uni ishga tushirish</string>
+    <string name="theme_l_18">Chang yutgich yasash</string>
+    <string name="theme_l_19">Osmon sferasining modelini yasash</string>
+    <string name="theme_l_20">Men kichik tadqiqotchiman ko‘rik tanlovini tashkil etish</string>
     <string name="test">test</string>
     <string name="nazorat_savollari">Nazorat savollari</string>
     <string name="select_true_answer">To’g’ri variantni tanlang</string>
@@ -102,5 +109,6 @@
     <string name="occupation2">Mustaqil izlanuvchi</string>
     <string name="occupation1">O\'qituvchi</string>
     <string name="occupation3">Talaba</string>
+    <string name="videos">"Videolar   "</string>
 
 </resources>
