@@ -50,10 +50,11 @@
         app:cardCornerRadius="35dp"
         app:contentPaddingBottom="35dp">
 
-        <com.github.barteksc.pdfviewer.PDFView
-            android:id="@+id/pdfView"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPdf"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
 
     </androidx.cardview.widget.CardView>
 

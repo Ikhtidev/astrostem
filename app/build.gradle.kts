@@ -12,15 +12,15 @@ android {
         applicationId = "uz.sayfullayeva.astrostem"
         minSdk = 21
         targetSdk = 36
-        versionCode = 5
-        versionName = "1.3"
+        versionCode = 6
+        versionName = "1.4"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     packaging {
         jniLibs {
-            useLegacyPackaging = false
+            useLegacyPackaging = true
         }
     }
 
@@ -32,7 +32,7 @@ android {
                 "proguard-rules.pro"
             )
             ndk {
-                debugSymbolLevel = "SYMBOL_TABLE"
+                debugSymbolLevel = "FULL"
             }
         }
     }
@@ -63,9 +63,6 @@ dependencies {
 
     // lottie animations
     implementation("com.airbnb.android:lottie:4.2.1")
-
-    // pdfViewer
-    implementation("com.github.barteksc:android-pdf-viewer:2.8.2")
 
     //room
     implementation("androidx.room:room-runtime:2.5.2")
